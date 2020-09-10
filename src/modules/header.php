@@ -16,7 +16,7 @@
 <header id="header" class="header">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 d-flex align-items-center justify-content-between">
+            <div class="col-md-3 col-xl-2 d-flex align-items-center justify-content-between">
                 <div class="header__logo">
                     <img src="./assets/img/interface/logo.svg" alt="">
                 </div>
@@ -26,7 +26,7 @@
                   </span>
                 </button>
             </div>
-            <div class="col-md-10 d-flex justify-content-end">
+            <div class="col-md-9 col-xl-10 d-flex justify-content-end">
                 <nav class="header__menu">
                     <ul>
                         <li><a href="#">Our Firm</a></li>

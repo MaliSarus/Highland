@@ -7,6 +7,7 @@ $md-width: 768px;
 $lg-width: 992px;
 $xl-width: 1200px;
 
+
 body {
   margin: 0;
   padding: 0;
@@ -28,6 +29,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol{
 
 ul,ol{
   padding: 0;
+  font-weight: bold;
 }
 
 h2{

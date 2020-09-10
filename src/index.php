@@ -2,6 +2,7 @@
 require './modules/header.php';
 require './modules/top-slider.php';
 require './modules/quote-and-text.php';
+require './modules/tabs.php';
 require './modules/footer.php';
 ?>
 
