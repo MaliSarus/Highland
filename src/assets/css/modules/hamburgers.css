@@ -86,12 +86,11 @@
 }
 
 .hamburger-inner::before {
-  top: -10px;
+  top: 0;
 }
 
 .hamburger-inner::after {
   bottom: -10px;
-  width: 30px;
 }
 
 /*

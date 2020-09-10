@@ -1,0 +1,112 @@
+.quote{
+  p{
+    color: $color;
+    font-weight: bold;
+    padding-top: 27px;
+    position: relative;
+    font-size: 24px;
+    line-height: 30px;
+    @media screen and (min-width: $md-width){
+      padding-top: 0;
+      padding-left: 41px;
+      font-size: 26px;
+    }
+    &::before, &::after{
+      width: 21px;
+      height: 12px;
+      content: '';
+      background: url("../img/interface/quote.svg") center / contain no-repeat;
+    }
+    &::before{
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: url("../img/interface/quote.svg") center / contain no-repeat;
+      @media screen and (min-width: $md-width){
+        top: 6px;
+      }
+    }
+    &::after{
+      display: inline-block;
+      margin-left: 15px;
+      margin-bottom: 7px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.text{
+  p{
+    font-size: 14px;
+    color: $color;
+    line-height: 26px;
+    //overflow-wrap: break-spaces;
+    word-break: break-word;
+    @media screen and (min-width: $md-width){
+        font-size: 16px;
+        line-height: 28px;
+    }
+  }
+}
+
+.lm-link, .submit-link{
+  cursor: pointer;
+  color: black;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 22px;
+  text-transform: uppercase;
+  transition: color .25s;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  &:hover{
+    color: $accent-color;
+    text-decoration: none;
+  }
+  &:active, &:focus{
+    outline: none;
+  }
+  span{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $accent-color;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 15px;
+      height: 16px;
+      background: url("../img/interface/button-arrow.svg") center / contain no-repeat;
+    }
+  }
+}
+
+.submit-link{
+  &.success{
+    span {
+      animation: success .5s;
+    }
+  }
+}
+
+@keyframes success{
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(calc(360deg * 3));
+  }
+}

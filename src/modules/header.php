@@ -16,10 +16,15 @@
 <header id="header" class="header">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 d-flex align-items-center">
+            <div class="col-md-2 d-flex align-items-center justify-content-between">
                 <div class="header__logo">
                     <img src="./assets/img/interface/logo.svg" alt="">
                 </div>
+                <button class="hamburger hamburger--collapse" type="button">
+                  <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                  </span>
+                </button>
             </div>
             <div class="col-md-10 d-flex justify-content-end">
                 <nav class="header__menu">

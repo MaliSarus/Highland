@@ -1,7 +1,7 @@
 <?php
 require './modules/header.php';
 require './modules/top-slider.php';
-
+require './modules/quote-and-text.php';
 require './modules/footer.php';
 ?>
 

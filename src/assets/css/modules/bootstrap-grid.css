@@ -575,7 +575,7 @@ html {
 
 @media (min-width: 576px) {
   .container {
-    max-width: 570px;
+    max-width: 540px;
   }
 
   .col-sm {
@@ -1022,7 +1022,7 @@ html {
 
 @media (min-width: 768px) {
   .container {
-    max-width: 750px;
+    max-width: 720px;
   }
 
   .col-md {
@@ -1469,7 +1469,7 @@ html {
 
 @media (min-width: 992px) {
   .container {
-    max-width: 990px;
+    max-width: 960px;
   }
 
   .col-lg {

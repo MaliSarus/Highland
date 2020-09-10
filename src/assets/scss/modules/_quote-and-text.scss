@@ -1,0 +1,21 @@
+.quote-and-text{
+  padding-top: 33px;
+  padding-bottom: 40px;
+  background: white;
+  @media screen and (min-width: $md-width){
+    padding-top: 90px;
+    padding-bottom: 80px;
+  }
+  .quote{
+    margin-bottom: 40px;
+    @media screen and (min-width: $md-width){
+      padding-right: 20px;
+    }
+  }
+  .lm-link{
+    margin-top: 15px;
+    @media screen and (min-width: $md-width){
+      margin-top: 30px;
+    }
+  }
+}
