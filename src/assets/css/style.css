@@ -620,15 +620,19 @@ body {
 
 * {
   font-family: 'Open Sans', sans-serif;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 header {
   width: 100%;
   height: 92px;
-  background: rgba(1, 95, 255, 0.7);
   position: fixed;
   top: 0;
   left: 0;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: 500;
 }
 
 header .container {
@@ -711,6 +715,119 @@ header .container .row {
 .header__menu a {
   color: white;
   text-decoration: none;
+}
+
+.top-slider__block {
+  width: 100%;
+  position: relative;
+}
+
+.top-slider__block .slider-control {
+  position: absolute;
+  padding-top: 92px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+.top-slider__block .slider-control .row {
+  height: 100%;
+}
+
+.top-slider__slide {
+  position: relative;
+  z-index: 10;
+}
+
+.top-slider__slide img {
+  display: block;
+  height: 780px;
+  width: 100%;
+  -o-object-position: center;
+  object-position: center;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.top-slider__slide-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 141px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.top-slider__slide-content h1 {
+  font-size: 40px;
+  color: white;
+}
+
+.top-slider__nav {
+  width: 88px;
+  height: 24px;
+  position: absolute;
+  left: 15px;
+  bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.top-slider__nav .arrow {
+  -ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  background: url("../img/top-slider/arrow.svg") no-repeat left center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.top-slider__nav .arrow-next {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.top-slider__pagination {
+  position: absolute;
+  right: 0;
+  bottom: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.top-slider__pagination span {
+  cursor: pointer;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  margin-bottom: 20px;
+}
+
+.top-slider__pagination span.active {
+  border: 1px solid white;
+  background: transparent;
+}
+
+.top-slider__pagination span:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: 576px) {

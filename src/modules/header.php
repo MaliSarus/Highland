@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Заголовок</title>
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/swiper.css">
     <script defer src="./assets/js/jquery-3.4.1.min.js"></script>
     <script defer src="./assets/js/swiper.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
