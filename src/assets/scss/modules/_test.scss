@@ -1,0 +1,17 @@
+.test{
+  height: 689px;
+  &__block{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    &-image{
+      flex-basis: 60%;
+      height: 100%;
+      background: #2b2b2b;
+      h2{
+        width: calc(351px + 386px);
+        margin-left: auto;
+      }
+    }
+  }
+}

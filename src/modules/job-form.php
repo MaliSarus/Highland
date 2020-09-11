@@ -3,7 +3,9 @@
         <div class="container-fluid h-100">
            <div class="row h-100">
                <div class="col-8 col-lg-7 p-0">
-                   <div class="image"></div>
+                   <div class="image image_with-cover">
+                       <img src="https://miro.medium.com/max/8000/1*JrHDbEdqGsVfnBYtxOitcw.jpeg" alt="">
+                   </div>
                </div>
            </div>
         </div>
@@ -31,7 +33,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="col-12 col-lg-4 offset-lg-1 p-0">

@@ -7882,6 +7882,18 @@ label.valid.textarea {
   color: #B1B1B3;
 }
 
+label.valid.textarea input {
+  border-color: #B1B1B3;
+}
+
+label.valid.textarea input:hover {
+  border-color: black;
+}
+
+label.valid.textarea input:focus {
+  border-color: #015FFF;
+}
+
 label.invalid {
   color: #e92731;
 }
@@ -8038,6 +8050,24 @@ textarea {
 
 .image {
   width: 100%;
+}
+
+.image_with-cover {
+  position: relative;
+}
+
+.image_with-cover::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2E2E2E), to(#111111));
+  background: -o-linear-gradient(top, #2E2E2E 0%, #111111 100%);
+  background: linear-gradient(180deg, #2E2E2E 0%, #111111 100%);
+  opacity: .6;
 }
 
 .image img {
@@ -8625,6 +8655,31 @@ header .container .row {
 .job-form__form {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.test {
+  height: 689px;
+}
+
+.test__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.test__block-image {
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+  height: 100%;
+  background: #2b2b2b;
+}
+
+.test__block-image h2 {
+  width: calc(351px + 386px);
+  margin-left: auto;
 }
 
 .footer {

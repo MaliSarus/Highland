@@ -178,6 +178,7 @@
             var jobForm = $('.job-form__form');
             var labels = jobForm.find('label');
             var jobFormSubmit = jobForm.find('.submit-link');
+            var background = $('.job-form__background img').attr('src');
             jobFormSubmit.on('click submit', function (event) {
                 event.preventDefault();
                 var failFlag = 0;

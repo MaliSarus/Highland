@@ -101,6 +101,15 @@ label{
     }
     &.textarea{
       color: #B1B1B3;
+      input{
+        border-color: #B1B1B3;
+        &:hover{
+          border-color: black;
+        }
+        &:focus{
+          border-color: $accent-color;
+        }
+      }
     }
   }
 
