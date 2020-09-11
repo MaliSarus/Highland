@@ -123,6 +123,9 @@ label{
 }
 
 input, textarea{
+  font-size: 16px;
+  line-height: 22px;
+  padding: 15px 13px;
   width: 100%;
   margin-top: 10px;
   display: block;
@@ -142,12 +145,10 @@ input, textarea{
 }
 
 input{
-  font-size: 16px;
-  line-height: 22px;
-  padding: 15px 13px;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 textarea{
   resize: none;
+  font-weight: normal;
 }

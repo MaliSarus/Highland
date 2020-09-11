@@ -13,13 +13,7 @@
 
     }
     ul{
-      margin-left: -18px;
-      margin-right: -18px;
       display: flex;
-      @media screen and (min-width: $md-width){
-        margin-right: -26px;
-        margin-left: -26px;
-      }
       li{
         display: block;
         color: #B1B1B3;
@@ -30,17 +24,19 @@
         transition: color .25s;
         cursor: pointer;
         &.active{
-          color: $color
-        }
-        &:hover{
-          color: $accent-color;
+          color: $color;
+          &:hover{
+            color: $color;
+          }
         }
         @media screen and (min-width: $md-width){
           font-size: 24px;
           line-height: 33px;
           padding: 0 26px;
         }
-
+        &:hover{
+          color: $accent-color;
+        }
         &::before{
           content: none;
         }
@@ -58,7 +54,11 @@
             height: 31px;
           }
         }
+        &:first-child{
+          padding-left: 0;
+        }
         &:last-child{
+          padding-right: 0;
           &::after{
             content: none;
           }

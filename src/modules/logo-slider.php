@@ -1,5 +1,5 @@
 <section class="logo-slider">
-    <div class="conteiner-fluid container-md">
+    <div class="conteiner">
         <div class="row">
             <div class="col-12">
                 <div class="logo-slider__header">
@@ -7,6 +7,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="logo-slider__slider swiper-container">

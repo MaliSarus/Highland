@@ -40,10 +40,9 @@
         nameInput.on('input', function () {
             $(this).val($(this).val().replace(/[^A-z]/, ''));
             var valLength = $(this).val().length;
-            if (valLength > 3){
+            if (valLength > 3) {
                 $(this).parent().removeClass('invalid').addClass('valid');
-            }
-            else{
+            } else {
                 $(this).parent().removeClass('valid').addClass('invalid');
             }
         });
@@ -153,7 +152,7 @@
                 $(tabsPage[index]).addClass('active');
             })
         }
-        if(isSet($('.contact-form'))){
+        if (isSet($('.contact-form'))) {
             var contactForm = $('.contact-form__form');
             var labels = contactForm.find('label');
             var contactFormSubmit = contactForm.find('.submit-link');
@@ -174,11 +173,16 @@
             });
         }
 
-        if(isSet($('.job-form'))){
+        if (isSet($('.job-form'))) {
             var jobForm = $('.job-form__form');
             var labels = jobForm.find('label');
             var jobFormSubmit = jobForm.find('.submit-link');
             var background = $('.job-form__background img').attr('src');
+            if ($(window).width() < lgWidth) {
+                $('.job-form__container').css({
+                    backgroundImage: 'url("' + background + '")'
+                })
+            }
             jobFormSubmit.on('click submit', function (event) {
                 event.preventDefault();
                 var failFlag = 0;
@@ -197,13 +201,22 @@
         }
 
 
-
     })
     //Готовность документа
 
     //Масштаб окна
     $(window).on('resize', function () {
-
+        if (isSet($('.job-form'))) {
+            if ($(window).width() < lgWidth) {
+                var background = $('.job-form__background img').attr('src');
+                $('.job-form__container').css({
+                    backgroundImage: 'url("' + background + '")'
+                })
+            }
+            else {
+                $('.job-form__container').removeAttr('style')
+            }
+        }
     })
 
     $(window).on('scroll', function () {
