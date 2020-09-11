@@ -1,6 +1,8 @@
 $color: #1B1919;
 $accent-color: #015FFF;
 
+$bg-color-gray: #F3F4F7;
+
 $xs-width: 0;
 $sm-width: 576px;
 $md-width: 768px;
@@ -33,12 +35,110 @@ ul,ol{
 }
 
 h2{
-  height: 27px;
   color: $color;
   font-size: 20px;
   line-height: 27px;
+  font-weight: bold;
   @media screen and (min-width: $md-width){
     font-size: 24px;
-    line-height: 33;
+    line-height: 33px;
   }
+}
+
+p{
+  font-size: 14px;
+  color: $color;
+  line-height: 26px;
+}
+
+ul {
+  li {
+    list-style: none;
+    position: relative;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 23px;
+    margin-bottom: 21px;
+    @media screen and (min-width: $md-width) {
+      font-size: 20px;
+      line-height: 40px;
+      padding-left: 25px;
+      margin-bottom: 5px;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: $accent-color;
+      left: 0;
+      top: calc(23px / 2 - 2.5px);
+      @media screen and (min-width: $md-width) {
+        top: calc(40px / 2 - 2.5px);
+      }
+    }
+  }
+}
+
+label{
+  display: block;
+  color: #B1B1B3;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  &.valid{
+    color:#10ce6f;
+    input{
+      color: #10ce6f;
+      border-color: #10ce6f;
+    }
+    &.textarea{
+      color: #B1B1B3;
+    }
+  }
+
+  &.invalid{
+    color: #e92731;
+    input{
+      color: #e92731;
+      border-color: #e92731;
+    }
+  }
+}
+
+input, textarea{
+  width: 100%;
+  margin-top: 10px;
+  display: block;
+  border: 1px solid #B1B1B3;
+  transition: border-color .2s;
+  color: black;
+  &:hover,
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    border-color: black;
+  }
+  &:focus{
+    border-color: $accent-color;
+  }
+}
+
+input{
+  font-size: 16px;
+  line-height: 22px;
+  padding: 15px 13px;
+  font-weight: bold;
+}
+
+textarea{
+  resize: none;
 }

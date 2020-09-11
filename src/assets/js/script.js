@@ -4,9 +4,49 @@
     var mdWidth = 768;
     var lgWidth = 992;
     var xlWidth = 1200;
+    var mailPattern = /^[\.a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
+    var numPattern = /^[+][0-9]+$/i;
+
 
     function isSet(element) {
         return element.length !== 0;
+    }
+
+    function uiDefaultSet() {
+        var mailInput = $('[type="email"]');
+        var numInput = $('.num-input');
+        var nameInput = $('.name-input');
+
+        $('.lm-link').append('<span></span>');
+        $('.submit-link').append('<span></span>');
+        $('.submit-link').on('click', function () {
+            $(this).addClass('success')
+        })
+
+        mailInput.on('input', function () {
+            if ($(this).val().search(mailPattern) == 0) {
+                $(this).parent().removeClass('invalid').addClass('valid');
+            } else {
+                $(this).parent().removeClass('valid').addClass('invalid');
+            }
+        });
+        numInput.on('input', function () {
+            if ($(this).val().search(numPattern) == 0) {
+                $(this).parent().removeClass('invalid').addClass('valid');
+            } else {
+                $(this).parent().removeClass('valid').addClass('invalid');
+            }
+        });
+        nameInput.on('input', function () {
+            $(this).val($(this).val().replace(/[^A-z]/, ''));
+            var valLength = $(this).val().length;
+            if (valLength > 3){
+                $(this).parent().removeClass('invalid').addClass('valid');
+            }
+            else{
+                $(this).parent().removeClass('valid').addClass('invalid');
+            }
+        });
     }
 
     function topSliderInit() {
@@ -87,15 +127,75 @@
 
     //Готовность документа
     $(document).ready(function () {
+
+
         hamburgerInit();
-        $('.lm-link').append('<span></span>');
-        $('.submit-link').append('<span></span>');
-        $('.submit-link').on('click', function () {
-            $(this).addClass('success')
-        })
+        uiDefaultSet();
         if (isSet($('.top-slider'))) {
             topSliderInit();
         }
+        if (isSet($('.tabs'))) {
+            var tabsPage = $('.tabs__page');
+            var tabs = $('.tabs ul');
+            tabsPage.each(function () {
+                if (isSet($(this).find('.lm-link'))) {
+                    var link = $(this).find('.lm-link');
+                    var href = link.attr('href');
+                    $(this).find('.text').append(' <a href="' + href + '" class="lm-link mobile">Learn More<span></span></a>')
+                }
+            })
+            tabs.on('click', 'li', function () {
+                var tabsEl = tabs.find('li');
+                var index = tabsEl.index($(this));
+                tabsEl.removeClass('active');
+                $(this).addClass('active');
+                tabsPage.removeClass('active');
+                $(tabsPage[index]).addClass('active');
+            })
+        }
+        if(isSet($('.contact-form'))){
+            var contactForm = $('.contact-form__form');
+            var labels = contactForm.find('label');
+            var contactFormSubmit = contactForm.find('.submit-link');
+            contactFormSubmit.on('click submit', function (event) {
+                event.preventDefault();
+                var failFlag = 0;
+                labels.each(function () {
+                    if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
+                        failFlag = 1;
+                        $(this).addClass('invalid').children('label').addClass('invalid');
+                    }
+                });
+                if (failFlag == 1) {
+                    console.log('fail');
+                } else {
+                    console.log('success');
+                }
+            });
+        }
+
+        if(isSet($('.job-form'))){
+            var jobForm = $('.job-form__form');
+            var labels = jobForm.find('label');
+            var jobFormSubmit = jobForm.find('.submit-link');
+            jobFormSubmit.on('click submit', function (event) {
+                event.preventDefault();
+                var failFlag = 0;
+                labels.each(function () {
+                    if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
+                        failFlag = 1;
+                        $(this).addClass('invalid').children('label').addClass('invalid');
+                    }
+                });
+                if (failFlag == 1) {
+                    console.log('fail');
+                } else {
+                    console.log('success');
+                }
+            });
+        }
+
+
 
     })
     //Готовность документа
@@ -106,7 +206,7 @@
     })
 
     $(window).on('scroll', function () {
-       headerColoring();
+        headerColoring();
     })
     //Масштаб окна
 

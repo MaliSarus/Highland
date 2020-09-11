@@ -12,6 +12,14 @@
       padding-right: 20px;
     }
   }
+  .text{
+    p{
+      @media screen and (min-width: $md-width){
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+  }
   .lm-link{
     margin-top: 15px;
     @media screen and (min-width: $md-width){

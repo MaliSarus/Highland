@@ -86,6 +86,11 @@ header {
       li {
         list-style: none;
         position: relative;
+        padding: 0;
+        margin-bottom: 0;
+        &::before{
+          content: none;
+        }
 
 
         @media screen and (min-width: $md-width){

@@ -3,8 +3,8 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="quote">
-                    <p>We offer a comprehensive, integrated service to Startup, High Growth, and Market-leading
-                        companies as well as to Institutional Investors</p>
+                    <p><b>We offer a comprehensive, integrated service to Startup, High Growth, and Market-leading
+                            companies as well as to Institutional Investors</b></p>
                 </div>
             </div>
             <div class="col-12 col-md-6">

@@ -1,0 +1,55 @@
+.contact-form{
+  padding: 45px 0 40px;
+  @media screen and (min-width: $md-width){
+    padding: 70px 0 60px;
+  }
+  &__header{
+    margin-bottom: 20px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 40px;
+    }
+    p{
+      font-size: 16px;
+      line-height: 28px;
+    }
+  }
+  &__form{
+    .form{
+      &-row-custom{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+      &-column{
+        flex-basis: 100%;
+        flex-grow: 1;
+        padding: 0 15px;
+        @media screen and (min-width: $md-width){
+          flex-basis: 50%;
+        }
+        input{
+        }
+        label[for="contact-form-text"]{
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          textarea{
+            height: auto;
+            flex-grow: 1;
+            width: 100%;
+          }
+        }
+        .submit-link{
+          margin-top: 20px;
+          @media screen and (min-width: $md-width){
+            margin-top: 40px;
+          }
+        }
+        & :last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

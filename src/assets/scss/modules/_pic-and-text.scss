@@ -1,0 +1,43 @@
+.pic-and-text{
+  padding: 40px 0;
+  background: white;
+  @media screen and (min-width: $md-width){
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+  .text{
+    margin-bottom: 40px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 0;
+      max-width: 351px;
+      padding-left: 30px;
+    }
+    h2{
+      margin-bottom: 20px;
+    }
+    p{
+      margin-bottom: 20px;
+      @media screen and (min-width: $md-width){
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+    .lm-link{
+      @media screen and (min-width: $md-width){
+        margin-top: 40px;
+      }
+    }
+    & :last-child{
+      margin-bottom: 0;
+    }
+  }
+  .image{
+    height: 342px;
+    @media screen and (min-width: $sm-width){
+      height: 400px;
+    }
+    @media screen and (min-width: $md-width){
+      height: 414px;
+    }
+  }
+}
