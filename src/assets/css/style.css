@@ -8527,10 +8527,114 @@ header .container .row {
 
 .logo-slider {
   background: #F3F4F7;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.logo-slider__header {
+  position: relative;
+  margin-bottom: 30px;
 }
 
 .logo-slider__header h2 {
   text-align: center;
+}
+
+.logo-slider__header .logo-slider-arrow {
+  display: block;
+}
+
+.logo-slider__slider {
+  padding: 0 calc(100% / 3);
+}
+
+.logo-slider__slider .swiper-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo-slider__slider .swiper-slide {
+  height: auto;
+}
+
+.logo-slider__slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-slider__slide .image {
+  width: 100%;
+  max-width: 116px;
+  margin-bottom: 9px;
+}
+
+.logo-slider__slide .image img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
+}
+
+.logo-slider__slide .text {
+  color: black;
+}
+
+.logo-slider__slide .text h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 22px;
+}
+
+.logo-slider__slide .text p {
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.logo-slider__slide .location {
+  font-size: 12px;
+  line-height: 17px;
+  color: black;
+}
+
+.logo-slider-arrow {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: url("../img/logo-slider/arrow.svg") left center no-repeat;
+  background-size: contain;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+  display: none;
+}
+
+.logo-slider-arrow.prev {
+  left: 0;
+}
+
+.logo-slider-arrow.next {
+  right: 0;
+  -webkit-transform: rotate(180deg) translateY(50%);
+  -ms-transform: rotate(180deg) translateY(50%);
+  transform: rotate(180deg) translateY(50%);
 }
 
 .contact-form {
@@ -9860,11 +9964,32 @@ header .container .row {
   .text-sm-center {
     text-align: center !important;
   }
+
+  .container-sm {
+    max-width: 570px;
+  }
 }
 
 @media screen and (min-width: 576px) {
   .pic-and-text .image {
     height: 400px;
+  }
+
+  .logo-slider__header .logo-slider-arrow.prev {
+    left: -15px;
+  }
+
+  .logo-slider__header .logo-slider-arrow.next {
+    right: -15px;
+  }
+
+  .logo-slider__slider {
+    padding: unset;
+  }
+
+  .logo-slider__slide .image {
+    max-width: none;
+    width: 116px;
   }
 }
 
@@ -10703,6 +10828,14 @@ header .container .row {
   .text-md-center {
     text-align: center !important;
   }
+
+  .container-sm {
+    max-width: 750px;
+  }
+
+  .container-md {
+    max-width: 750px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -10881,6 +11014,43 @@ header .container .row {
 
   .pic-and-text .image {
     height: 414px;
+  }
+
+  .logo-slider {
+    padding-top: 70px;
+    padding-bottom: 80px;
+  }
+
+  .logo-slider__header {
+    margin-bottom: 40px;
+  }
+
+  .logo-slider__header .logo-slider-arrow {
+    display: none;
+  }
+
+  .logo-slider__slide .image {
+    width: 176px;
+    margin-bottom: 5px;
+  }
+
+  .logo-slider__slide .text h3 {
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .logo-slider__slide .text p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .logo-slider__slide .location {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .logo-slider-arrow {
+    display: block;
   }
 
   .contact-form {
@@ -11769,6 +11939,18 @@ header .container .row {
   .text-lg-center {
     text-align: center !important;
   }
+
+  .container-sm {
+    max-width: 990px;
+  }
+
+  .container-md {
+    max-width: 990px;
+  }
+
+  .container-lg {
+    max-width: 990px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -12642,6 +12824,22 @@ header .container .row {
 
   .text-xl-center {
     text-align: center !important;
+  }
+
+  .container-sm {
+    max-width: 1200px;
+  }
+
+  .container-md {
+    max-width: 1200px;
+  }
+
+  .container-lg {
+    max-width: 1200px;
+  }
+
+  .container-xl {
+    max-width: 1200px;
   }
 }
 

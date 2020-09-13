@@ -90,10 +90,36 @@
             $(this).addClass('active');
             mySwiperControl.slideTo(+$(this).attr('data-index'));
         });
+    };
+    function logoSliderInit() {
+        var mySwiper = new Swiper('.logo-slider__slider', {
+            // Optional parameters
+            slidesPerView: 1,
+            spaceBetween: 50,
+            direction: 'horizontal',
+            loop: true,
+            grabCursor: true,
+            breakpoints: {
+                576: {
+                    spaceBetween: 0,
+                    slidesPerView: 3,
+                },
+                992: {
+                    slidesPerView: 4,
+                },
+            }
+        });
+        var mySwiperControl = document.querySelector('.logo-slider__slider.swiper-container').swiper;
 
-        $(window).on('resize', function () {
-            console.log('resize')
-        })
+        var logoSliderArrow = $('.logo-slider-arrow');
+        logoSliderArrow.on('click', function () {
+            if ($(this).is('.prev')) {
+                mySwiperControl.slidePrev();
+            }
+            if ($(this).is('.next')) {
+                mySwiperControl.slideNext();
+            }
+        });
     };
 
     function hamburgerInit() {
@@ -132,6 +158,9 @@
         uiDefaultSet();
         if (isSet($('.top-slider'))) {
             topSliderInit();
+        }
+        if (isSet($('.logo-slider'))) {
+            logoSliderInit();
         }
         if (isSet($('.tabs'))) {
             var tabsPage = $('.tabs__page');
