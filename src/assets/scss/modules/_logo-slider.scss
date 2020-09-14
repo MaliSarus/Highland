@@ -49,21 +49,34 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    &:hover{
+      cursor: pointer;
+      .image{
+        img{
+          filter: none
+        }
+      }
+    }
     .image{
       width: 100%;
-      max-width: 116px;
-      margin-bottom: 9px;
+      max-width: 119px;
+      max-height: 57px;
+      margin-bottom: 3px;
       @media screen and (min-width: $sm-width){
         max-width: none;
-        width: 116px;
+        width: 119px;
+        height: 57px;
       }
       @media screen and (min-width: $md-width){
         width: 176px;
+        height: 84px;
         margin-bottom: 5px;
       }
       img{
         object-fit: contain;
         object-position: center;
+        filter: grayscale(1);
+        transition: filter .5s;
       }
     }
     .text{
@@ -72,9 +85,11 @@
         font-size: 16px;
         font-weight: bold;
         line-height: 22px;
+        margin-bottom: 4px;
         @media screen and (min-width: $md-width){
           font-size: 20px;
           line-height: 27px;
+          margin-bottom: 1px;
         }
       }
       p {
@@ -87,12 +102,20 @@
       }
     }
     .location{
+      display: flex;
       font-size: 12px;
       line-height: 17px;
       color: black;
+      margin-top: 7px;
       @media screen and (min-width: $md-width){
         font-size: 14px;
         line-height: 19px;
+        margin-top: 17px;
+      }
+      &-icon{
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
       }
     }
   }

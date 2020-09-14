@@ -17,12 +17,15 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="logo-slider__slide">
-                                <div class="image"><img src="./assets/img/logo-slider/1.png" alt=""></div>
+                                <div class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/768px-Facebook_Logo_%282019%29.png" alt=""></div>
                                 <div class="text">
                                     <h3>Mainstay Medical</h3>
                                     <p>Medical Device</p>
                                 </div>
                                 <div class="location">
+                                    <svg class="location-icon">
+                                        <use xlink:href="#location-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
                                     Europe
                                 </div>
                             </div>
@@ -35,6 +38,9 @@
                                     <p>Energy</p>
                                 </div>
                                 <div class="location">
+                                    <svg class="location-icon">
+                                        <use xlink:href="#location-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
                                     Canada
                                 </div>
                             </div>
@@ -47,6 +53,9 @@
                                     <p>Medical Device</p>
                                 </div>
                                 <div class="location">
+                                    <svg class="location-icon">
+                                        <use xlink:href="#location-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
                                     US
                                 </div>
                             </div>
@@ -59,6 +68,9 @@
                                     <p>Medical Device</p>
                                 </div>
                                 <div class="location">
+                                    <svg class="location-icon">
+                                        <use xlink:href="#location-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+                                    </svg>
                                     Israel
                                 </div>
                             </div>

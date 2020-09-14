@@ -91,6 +91,7 @@
             mySwiperControl.slideTo(+$(this).attr('data-index'));
         });
     };
+
     function logoSliderInit() {
         var mySwiper = new Swiper('.logo-slider__slider', {
             // Optional parameters
@@ -165,6 +166,7 @@
         if (isSet($('.tabs'))) {
             var tabsPage = $('.tabs__page');
             var tabs = $('.tabs ul');
+            var pageList = tabsPage.find('ul');
             tabsPage.each(function () {
                 if (isSet($(this).find('.lm-link'))) {
                     var link = $(this).find('.lm-link');
@@ -179,6 +181,27 @@
                 $(this).addClass('active');
                 tabsPage.removeClass('active');
                 $(tabsPage[index]).addClass('active');
+                pageList = $('.tabs__page.active').find('ul');
+            });
+            var animationFlag = 0;
+            pageList.on('mouseenter', 'li', function () {
+                var pageListEl = $('.tabs__page.active ul > li')
+                var index = pageListEl.index($(this));
+                var imageEl = $('.tabs__page.active .image > img');
+                var activeImageEl = $('.tabs__page.active .image > img.active');
+                var activeImageIndex = imageEl.index(activeImageEl);
+
+                if (index != activeImageIndex) {
+                    if (animationFlag == 0) {
+                        animationFlag = 1;
+                        activeImageEl.fadeOut(function () {
+                            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').removeClass('active');
+                            $(imageEl[index]).attr("src", $(imageEl[index]).attr('data-src')).removeAttr('data-src').stop(true, true).hide().fadeIn().addClass('active');
+                            animationFlag = 0;
+                        })
+                    }
+                }
+                // $(imageEl[index]).removeClass('hidden').addClass('active')
             })
         }
         if (isSet($('.contact-form'))) {
@@ -241,8 +264,7 @@
                 $('.job-form__container').css({
                     backgroundImage: 'url("' + background + '")'
                 })
-            }
-            else {
+            } else {
                 $('.job-form__container').removeAttr('style')
             }
         }

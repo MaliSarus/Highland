@@ -8478,6 +8478,9 @@ header .container .row {
 
 .tabs__page .image {
   height: 400px;
+  -webkit-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s;
 }
 
 .tabs__page .image img {
@@ -8487,6 +8490,11 @@ header .container .row {
   object-position: top;
   -o-object-fit: cover;
   object-fit: cover;
+  opacity: 1;
+}
+
+.tabs__page .image img[data-src] {
+  display: none;
 }
 
 .tabs__page .lm-link {
@@ -8572,10 +8580,20 @@ header .container .row {
   text-align: center;
 }
 
+.logo-slider__slide:hover {
+  cursor: pointer;
+}
+
+.logo-slider__slide:hover .image img {
+  -webkit-filter: none;
+  filter: none;
+}
+
 .logo-slider__slide .image {
   width: 100%;
-  max-width: 116px;
-  margin-bottom: 9px;
+  max-width: 119px;
+  max-height: 57px;
+  margin-bottom: 3px;
 }
 
 .logo-slider__slide .image img {
@@ -8583,6 +8601,13 @@ header .container .row {
   object-fit: contain;
   -o-object-position: center;
   object-position: center;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  -webkit-transition: -webkit-filter .5s;
+  transition: -webkit-filter .5s;
+  -o-transition: filter .5s;
+  transition: filter .5s;
+  transition: filter .5s, -webkit-filter .5s;
 }
 
 .logo-slider__slide .text {
@@ -8593,6 +8618,7 @@ header .container .row {
   font-size: 16px;
   font-weight: bold;
   line-height: 22px;
+  margin-bottom: 4px;
 }
 
 .logo-slider__slide .text p {
@@ -8601,9 +8627,19 @@ header .container .row {
 }
 
 .logo-slider__slide .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 12px;
   line-height: 17px;
   color: black;
+  margin-top: 7px;
+}
+
+.logo-slider__slide .location-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
 }
 
 .logo-slider-arrow {
@@ -9989,7 +10025,8 @@ header .container .row {
 
   .logo-slider__slide .image {
     max-width: none;
-    width: 116px;
+    width: 119px;
+    height: 57px;
   }
 }
 
@@ -11031,12 +11068,14 @@ header .container .row {
 
   .logo-slider__slide .image {
     width: 176px;
+    height: 84px;
     margin-bottom: 5px;
   }
 
   .logo-slider__slide .text h3 {
     font-size: 20px;
     line-height: 27px;
+    margin-bottom: 1px;
   }
 
   .logo-slider__slide .text p {
@@ -11047,6 +11086,7 @@ header .container .row {
   .logo-slider__slide .location {
     font-size: 14px;
     line-height: 19px;
+    margin-top: 17px;
   }
 
   .logo-slider-arrow {
