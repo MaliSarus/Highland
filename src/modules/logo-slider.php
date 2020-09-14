@@ -12,7 +12,7 @@
     </div>
     <div class="container-fluid container-sm">
         <div class="row">
-            <div class="col-12 p-0 p-md-3">
+            <div class="col-12 p-0 pr-md-3 pl-md-3">
                 <div class="logo-slider__slider swiper-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">

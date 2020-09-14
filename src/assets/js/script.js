@@ -20,7 +20,7 @@
         $('.lm-link').append('<span></span>');
         $('.submit-link').append('<span></span>');
         $('.submit-link').on('click', function () {
-            $(this).addClass('success')
+            $(this).addClass('load')
         })
 
         mailInput.on('input', function () {
@@ -30,6 +30,9 @@
                 $(this).parent().removeClass('valid').addClass('invalid');
             }
         });
+        numInput.on('focus', function () {
+            $(this).val('+')
+        })
         numInput.on('input', function () {
             if ($(this).val().search(numPattern) == 0) {
                 $(this).parent().removeClass('invalid').addClass('valid');
@@ -179,37 +182,36 @@
                 var index = tabsEl.index($(this));
                 tabsEl.removeClass('active');
                 $(this).addClass('active');
-                tabsPage.removeClass('active');
-                $(tabsPage[index]).addClass('active');
-                pageList = $('.tabs__page.active').find('ul');
+                tabsPage.fadeOut(function () {
+                    $(this).removeClass('active');
+                    $(tabsPage[index]).addClass('active').fadeIn();
+                })
             });
             var animationFlag = 0;
             pageList.on('mouseenter', 'li', function () {
-                var pageListEl = $('.tabs__page.active ul > li')
+                var pageListEl = $('.tabs__page.active ul > li');
                 var index = pageListEl.index($(this));
                 var imageEl = $('.tabs__page.active .image > img');
                 var activeImageEl = $('.tabs__page.active .image > img.active');
                 var activeImageIndex = imageEl.index(activeImageEl);
 
                 if (index != activeImageIndex) {
-                    if (animationFlag == 0) {
-                        animationFlag = 1;
-                        activeImageEl.fadeOut(function () {
-                            $(this).attr('data-src', $(this).attr('src')).removeAttr('src').removeClass('active');
-                            $(imageEl[index]).attr("src", $(imageEl[index]).attr('data-src')).removeAttr('data-src').stop(true, true).hide().fadeIn().addClass('active');
-                            animationFlag = 0;
-                        })
-                    }
+                    animationFlag = 1;
+                    activeImageEl.fadeOut(function () {
+                        $(this).attr('data-src', $(this).attr('src')).removeAttr('src').removeClass('active');
+                        $(imageEl[index]).attr("src", $(imageEl[index]).attr('data-src')).removeAttr('data-src').stop(true, true).hide().fadeIn().addClass('active');
+                        animationFlag = 0;
+                    })
                 }
                 // $(imageEl[index]).removeClass('hidden').addClass('active')
             })
         }
         if (isSet($('.contact-form'))) {
-            var contactForm = $('.contact-form__form');
-            var labels = contactForm.find('label');
+            var contactForm = $('.contact-form__form form');
             var contactFormSubmit = contactForm.find('.submit-link');
-            contactFormSubmit.on('click submit', function (event) {
+            contactForm.on('submit', function (event) {
                 event.preventDefault();
+                var labels = $('.contact-form__form form label');
                 var failFlag = 0;
                 labels.each(function () {
                     if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
@@ -226,8 +228,7 @@
         }
 
         if (isSet($('.job-form'))) {
-            var jobForm = $('.job-form__form');
-            var labels = jobForm.find('label');
+            var jobForm = $('.job-form__form form');
             var jobFormSubmit = jobForm.find('.submit-link');
             var background = $('.job-form__background img').attr('src');
             if ($(window).width() < lgWidth) {
@@ -235,8 +236,9 @@
                     backgroundImage: 'url("' + background + '")'
                 })
             }
-            jobFormSubmit.on('click submit', function (event) {
+            jobForm.on('submit', function (event) {
                 event.preventDefault();
+                var labels = $('.job-form__form form label');
                 var failFlag = 0;
                 labels.each(function () {
                     if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {

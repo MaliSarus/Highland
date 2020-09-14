@@ -60,12 +60,11 @@
     .image{
       width: 100%;
       max-width: 119px;
-      max-height: 57px;
+      height: 57px;
       margin-bottom: 3px;
       @media screen and (min-width: $sm-width){
         max-width: none;
         width: 119px;
-        height: 57px;
       }
       @media screen and (min-width: $md-width){
         width: 176px;
@@ -123,8 +122,8 @@
     z-index: 10;
     cursor: pointer;
     position: absolute;
-    width: 19px;
-    height: 19px;
+    width: 22px;
+    height: 22px;
     background: url("../img/logo-slider/arrow.svg") left center no-repeat;
     background-size: contain;
     top: 50%;

@@ -52,15 +52,17 @@
         &::after {
           content: '';
           display: block;
-          width: 3px;
-          height: 21px;
+          width: 1px;
+          height: calc(100% - 6px);
           position: absolute;
-          right: -1px;
-          top: 50%;
-          transform: translateY(-50%);
+          right: -0.5px;
+          top: 5px;
           background: $accent-color;
           @media screen and (min-width: $md-width) {
-            height: 31px;
+            height: calc(100% - 2px);
+            width: 3px;
+            right: -1.5px;
+            top: 3px;
           }
         }
 
@@ -81,9 +83,11 @@
 
   &__page {
     display: none;
+    opacity: 0;
 
     &.active {
       display: block;
+      opacity: 1;
     }
 
     .text {
@@ -117,9 +121,10 @@
     }
 
     .image {
+      position: relative;
       height: 400px;
       transition: opacity .2s;
-      @media screen and (min-width: $lg-width) {
+      @media screen and (min-width: $xl-width) {
         height: 555px;
         width: 100%;
       }
@@ -130,6 +135,7 @@
         object-position: top;
         object-fit: cover;
         opacity: 1;
+        position: absolute;
 
         &[data-src] {
           display: none;

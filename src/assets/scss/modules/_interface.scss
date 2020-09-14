@@ -47,17 +47,24 @@
   display: flex;
   align-items: center;
   font-weight: 800;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 14px;
+  line-height: 19px;
   text-transform: uppercase;
   transition: color .25s;
   outline: none;
   border: none;
   background: transparent;
   padding: 0;
+  @media screen and (min-width: $md-width){
+    font-size: 16px;
+    line-height: 22px;
+  }
   &:hover{
     color: $accent-color;
     text-decoration: none;
+    span {
+      animation: bounceRight .6s ease-out forwards;
+    }
   }
   &:active, &:focus{
     outline: none;
@@ -78,17 +85,17 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: 15px;
-      height: 16px;
+      width: 20px;
+      height: 20px;
       background: url("../img/interface/button-arrow.svg") center / contain no-repeat;
     }
   }
 }
 
 .submit-link{
-  &.success{
+  &.load{
     span {
-      animation: success .5s;
+      animation: load .5s linear infinite;
     }
   }
 }
@@ -116,7 +123,7 @@
   }
 }
 
-@keyframes success{
+@keyframes load{
   from{
     transform: rotate(0deg);
   }
@@ -124,12 +131,20 @@
     transform: rotate(calc(360deg * 3));
   }
 }
-
-.container-lg{
-  @media screen and (min-width: $lg-width){
-    max-width: 990px;
+@keyframes bounceRight{
+  from{
+    transform: translateX(0);
   }
-  @media screen and (min-width: $xl-width){
-    max-width: 1170px;
+  25%{
+    transform: translateX(20px);
+  }
+  50%{
+    transform: translateX(0px);
+  }
+  75%{
+    transform: translateX(10px);
+  }
+  to{
+    transform: translateX(0px);
   }
 }

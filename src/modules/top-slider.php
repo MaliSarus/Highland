@@ -7,7 +7,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <img src="./assets/img/top-slider/1.png" alt="">
+                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <img src="./assets/img/top-slider/1.png" alt="">
+                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -39,7 +39,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <img src="./assets/img/top-slider/1.png" alt="">
+                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -55,7 +55,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <img src="./assets/img/top-slider/1.png" alt="">
+                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -71,7 +71,11 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <img src="./assets/img/top-slider/1.png" alt="">
+                                    <div class="video">
+                                        <video autoplay muted loop>
+                                            <source src="./assets/videos/cover.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -88,11 +92,15 @@
                         </div>
                     </div>
                     <div class="container slider-control">
-                        <div class="top-slider__nav">
-                            <div class="arrow arrow-prev"></div>
-                            <div class="arrow arrow-next"></div>
-                        </div>
-                        <div class="top-slider__pagination">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="top-slider__nav">
+                                    <div class="arrow arrow-prev"></div>
+                                    <div class="arrow arrow-next"></div>
+                                </div>
+                                <div class="top-slider__pagination">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
