@@ -39,7 +39,8 @@
                             <a href="mailto:info@highlandib.com">info@highlandib.com</a>
                         </div>
                         <div class="footer__social">
-                            logo
+                            <a href="#"><img src="./assets/img/footer/linkedIn.svg" alt=""></a>
+                            <a href="#"><img src="./assets/img/footer/linkedIn.svg" alt=""></a>
                         </div>
                     </div>
                 </div>

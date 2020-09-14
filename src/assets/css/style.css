@@ -8510,6 +8510,77 @@ header .container .row {
   }
 }
 
+.top-block {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 88px;
+  padding-bottom: 30px;
+}
+
+.top-block::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2E2E2E), to(#111111));
+  background: -o-linear-gradient(top, #2E2E2E 0%, #111111 100%);
+  background: linear-gradient(180deg, #2E2E2E 0%, #111111 100%);
+  opacity: .2;
+}
+
+.top-block .text {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 257px;
+}
+
+.top-block .text * {
+  color: white;
+}
+
+.top-block .text h2 {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.top-block .text p {
+  display: none;
+  font-weight: 600;
+}
+
+.top-block .text.top-block__mobile-text {
+  background: white;
+  display: block;
+  padding: 18px 0;
+  min-height: auto;
+}
+
+.top-block .text.top-block__mobile-text * {
+  color: #1B1919;
+}
+
+.top-block .text.top-block__mobile-text p {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+}
+
 .quote-and-text {
   padding-top: 33px;
   padding-bottom: 40px;
@@ -9070,6 +9141,27 @@ header .container .row {
 
 .footer__social {
   margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.footer__social a {
+  margin-right: 5px;
+  height: 31px;
+  width: 31px;
+}
+
+.footer__social a img {
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
 }
 
 .footer__right {
@@ -11124,6 +11216,25 @@ header .container .row {
 
   .top-slider__pagination span:last-child {
     margin-bottom: 0;
+  }
+
+  .top-block {
+    padding-top: 152px;
+    padding-bottom: 78px;
+  }
+
+  .top-block .text {
+    min-height: 550px;
+  }
+
+  .top-block .text p {
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  .top-block .text.top-block__mobile-text {
+    display: none;
   }
 
   .quote-and-text {

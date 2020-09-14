@@ -1,6 +1,7 @@
 <?php
 require './modules/header.php';
-require './modules/top-slider.php';
+//require './modules/top-slider.php';
+require './modules/top-block_one-column.php';
 require './modules/quote-and-text.php';
 require './modules/tabs.php';
 require './modules/pic-and-text.php';

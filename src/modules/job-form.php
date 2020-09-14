@@ -2,9 +2,9 @@
     <div class="job-form__background">
         <div class="container-fluid h-100">
            <div class="row h-100">
-               <div class="col-8 col-lg-7 p-0">
+               <div class="col-8 col-lg-7 p-0 h-100">
                    <div class="image image_with-cover">
-                       <img src="https://miro.medium.com/max/8000/1*JrHDbEdqGsVfnBYtxOitcw.jpeg" alt="">
+                       <img src="./assets/img/job-form/1.png" alt="">
                    </div>
                </div>
            </div>

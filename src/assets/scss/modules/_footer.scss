@@ -63,6 +63,18 @@
   }
   &__social{
     margin-left: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    a{
+      margin-right: 5px;
+      height: 31px;
+      width: 31px;
+      img{
+        object-fit: contain;
+        object-position: center;
+      }
+    }
   }
   &__right{
     color: white;
