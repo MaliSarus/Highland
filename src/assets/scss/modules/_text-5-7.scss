@@ -1,0 +1,104 @@
+.text-5-7{
+  padding-top: 18px;
+  padding-bottom: 37px;
+  @media screen and (min-width: $md-width){
+    padding-top: 70px;
+    padding-bottom: 80px;
+    font-weight: 600;
+  }
+  .text{
+    p{
+      @media screen and (min-width:$md-width){
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+  }
+  &.quote-and-text{
+    padding-top: 30px;
+    background: $bg-color-gray;
+    @media screen and (min-width: $md-width){
+      padding-top: 80px;
+      padding-bottom: 50px;
+      font-weight: 600;
+    }
+    .quote{
+      @media screen and (min-width: $md-width){
+        max-width: 400px;
+      }
+      p{
+        font-size: 22px;
+        line-height: 34px;
+        b{
+          font-size: 24px;
+        }
+        @media screen and (min-width: $md-width){
+          font-size: 28px;
+          line-height: 37px;
+          b{
+            font-size: 30px;
+          }
+        }
+        &::before{
+          @media screen and (min-width: $md-width){
+            top: 13px;
+          }
+        }
+      }
+    }
+    .text-5-7__right{
+      .text{
+        @media screen and (min-width: $lg-width){
+          padding-right: 100px;
+        }
+        p{
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  &__left{
+    margin-bottom: 30px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 0;
+    }
+    .text{
+      @media screen and (min-width: $md-width){
+        padding-right: 100px;
+      }
+    }
+  }
+  &__right{
+    .text{
+      & :last-child{
+        margin-bottom: 0;
+      }
+      & :first-child{
+        margin-top: 0;
+      }
+      p{
+        font-weight: 600;
+        margin: 18px 0;
+        @media screen and (min-width: $md-width){
+
+        }
+      }
+      ul{
+        margin: 30px 0;
+        @media screen and (min-width: $md-width){
+          margin: 18px 0;
+        }
+        li{
+          text-transform: uppercase;
+          @media screen and (min-width: $md-width){
+            font-size: 22px;
+            line-height: 46px;
+            &::before{
+              top: calc(46px / 2 - 2.5px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

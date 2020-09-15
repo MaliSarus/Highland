@@ -82,16 +82,12 @@
           line-height: 54px;
         }
       }
-
-      .content__block {
-        max-width: 709px;
-      }
     }
   }
 
   &__nav {
     position: absolute;
-    left: 8px;
+    left: 0;
     bottom: 50px;
     display: none;
     @media screen and (min-width: $md-width) {
@@ -102,7 +98,7 @@
       box-sizing: content-box;
       height: 24px;
       width: 24px;
-      padding: 10px;
+      padding: 15px;
       border-radius: 50%;
       flex-basis: 50%;
       cursor: pointer;

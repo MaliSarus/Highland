@@ -1,0 +1,135 @@
+.title-content-image-text{
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: $bg-color-gray;
+  @media screen and (min-width: $md-width){
+    padding-top: 70px;
+    padding-bottom: 74px;
+  }
+  &__item{
+    margin-bottom: 40px;
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $md-width){
+      margin-bottom: 80px;
+    }
+  }
+  &__title{
+    margin-bottom: 20px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 40px;
+    }
+  }
+  &__image{
+    height: 440px;
+    margin-bottom: 40px;
+    @media screen and (min-width: $md-width){
+      height: 678px;
+    }
+    .image{
+      position: relative;
+      height: 100%;
+      &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+      }
+      .article{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        @media screen and (min-width: $md-width){
+          padding: 50px 70px;
+          padding-right: 0;
+          display: block;
+          max-width: 423px;
+        }
+        >p{
+          font-size: 14px;
+          line-height: 23px;
+          @media screen and (min-width: $md-width){
+            max-width: 300px;
+          }
+        }
+        *{
+          color: white;
+        }
+        &__head{
+          flex-grow: 1;
+          padding-bottom: 36px;
+          @media screen  and (min-width: $md-width){
+            padding-bottom: 0;
+            margin-bottom: 36px;
+            flex-grow: unset;
+          }
+          h3 {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 27px;
+            margin-bottom: 5px;
+            @media screen and (min-width: $md-width) {
+              font-size: 30px;
+              line-height: 41px;
+            }
+          }
+          p.add-info{
+            font-size: 12px;
+            line-height: 23px;
+            @media screen and (min-width: $md-width) {
+              font-size: 16px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__text{
+    .text{
+      @media screen and (min-width: $md-width){
+        height: 391px;
+        column-count: 4;
+        column-width: 270px;
+        column-gap: 30px;
+        overflow: hidden;
+      }
+      &.running-title{
+        column-count: unset;
+        column-width: unset;
+        column-gap: unset;
+        height: auto;
+      }
+      h4{
+        margin: 29px 0 18px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 19px;
+        text-transform: uppercase;
+        @media screen and (min-width: $md-width){
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+      p{
+        margin: 18px 0;
+        @media screen and (min-width: $md-width){
+          line-height: 23px;
+        }
+      }
+      & :first-child{
+        margin-top: 6px;
+      }
+    }
+  }
+}

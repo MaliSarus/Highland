@@ -11,7 +11,7 @@
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12">
+                                                <div class="col-12 col-md-8">
                                                     <div class="content__block">
                                                         <h1>Highland Capital Advisors, founded by experienced Operators</h1>
                                                     </div>
@@ -27,7 +27,7 @@
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12">
+                                                <div class="col-12 col-md-8">
                                                     <div class="content__block">
                                                         <h1>Highland Capital Advisors, founded by experienced Operators</h1>
                                                     </div>
@@ -43,7 +43,7 @@
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12">
+                                                <div class="col-12 col-md-8">
                                                     <div class="content__block">
                                                         <h1>Highland Capital Advisors, founded by experienced Operators</h1>
                                                     </div>
@@ -59,7 +59,7 @@
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-11">
+                                                <div class="col-12 col-md-8">
                                                     <div class="content__block">
                                                         <h1>Highland Capital Advisors, founded by experienced Operators</h1>
                                                     </div>
@@ -79,7 +79,7 @@
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
-                                                <div class="col-12">
+                                                <div class="col-12 col-md-8">
                                                     <div class="content__block">
                                                         <h1>Highland Capital Advisors, founded by experienced Operators</h1>
                                                     </div>

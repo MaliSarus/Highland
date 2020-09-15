@@ -10,6 +10,13 @@ header {
     padding: 0;
     height: 92px;
   }
+  &.dark{
+    background-color: rgba(0,0,0,0.59);
+    backdrop-filter: blur(2px);
+    .header__menu {
+
+    }
+  }
   &.scrolled{
     background: rgba(1, 95, 255, 0.7);
     backdrop-filter: blur(2px);

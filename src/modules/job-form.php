@@ -2,7 +2,7 @@
     <div class="job-form__background">
         <div class="container-fluid h-100">
            <div class="row h-100">
-               <div class="col-8 col-lg-7 p-0 h-100">
+               <div class="col-lg-7 p-0 h-100">
                    <div class="image image_with-cover">
                        <img src="./assets/img/job-form/1.png" alt="">
                    </div>
@@ -16,7 +16,7 @@
                 <div class="job-form__container">
                     <div class="container">
                         <div class="row">
-                            <div class="col-12  p-xl-0">
+                            <div class="col-12">
                                 <div class="job-form__content">
                                     <div class="job-form__header">
                                         <h2>Careers</h2>
@@ -39,7 +39,7 @@
                 <div class="job-form__form">
                     <div class="container">
                         <div class="row">
-                            <div class="col-12 p-xl-0">
+                            <div class="col-12">
                                 <form action="#">
                                     <div class="form-row-custom">
                                         <label for="job-form-name">Name<input class="name-input" type="text" id="job-form-name"

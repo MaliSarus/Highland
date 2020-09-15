@@ -1,0 +1,39 @@
+.title-text-image {
+  padding-top: 40px;
+  padding-bottom: 0;
+  @media screen and (min-width: $md-width) {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    @media screen and (min-width: $lg-width){
+      margin-bottom: 0;
+    }
+    p {
+      margin: 18px 0;
+    }
+
+    & :first-child {
+      margin-top: 0;
+    }
+
+    & :last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__image{
+    height: 345px;
+    @media screen and (min-width: $md-width){
+      height: 370px;
+    }
+  }
+}

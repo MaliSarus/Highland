@@ -13,6 +13,9 @@
     }
 
     function uiDefaultSet() {
+        if (isSet($('.top-block'))){
+            $('header').addClass('dark')
+        }
         var mailInput = $('[type="email"]');
         var numInput = $('.num-input');
         var nameInput = $('.name-input');

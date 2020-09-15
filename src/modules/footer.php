@@ -40,7 +40,6 @@
                         </div>
                         <div class="footer__social">
                             <a href="#"><img src="./assets/img/footer/linkedIn.svg" alt=""></a>
-                            <a href="#"><img src="./assets/img/footer/linkedIn.svg" alt=""></a>
                         </div>
                     </div>
                 </div>

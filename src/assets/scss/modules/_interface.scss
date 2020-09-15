@@ -5,6 +5,7 @@
     position: relative;
     font-size: 24px;
     line-height: 30px;
+    font-weight: 600;
     @media screen and (min-width: $md-width){
       padding-top: 0;
       padding-left: 41px;
@@ -38,6 +39,16 @@
 .text{
   p{
     word-break: break-word;
+  }
+  &.running-title{
+    p{
+      font-size: 11px;
+      line-height: 20px;
+      @media screen and (min-width: $md-width){
+        font-size: 12px;
+        line-height: 17px;
+      }
+    }
   }
 }
 
