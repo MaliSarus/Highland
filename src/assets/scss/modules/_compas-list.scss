@@ -6,27 +6,41 @@
     padding: 60px 0;
   }
   &__compas{
+
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    padding: 40px 0;
+    right: -60px;
+    top: 20px;
+    width: 245px;
+    height: 245px;
+    //padding: 40px 0;
     @media screen and (min-width: $md-width){
+      width: 300px;
+      height: 300px;
+      right: 0;
+    }
+    @media screen and (min-width: $lg-width){
       padding: 60px 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
     }
     .compas{
-      position: relative;
-      @media screen and (min-width: $md-width){
+      @media screen and (min-width: $lg-width){
+        position: relative;
         width: 618px;
         height: 100%;
       }
       &__image{
         position: relative;
-        img{
-          width: 110%;
-          position: relative;
-          left: -10%;
+        > img{
+          width: 100%;
+          @media screen and (min-width: $lg-width){
+            width: 110%;
+            position: relative;
+            left: -10%;
+          }
         }
       }
       &__arrow{
@@ -35,10 +49,17 @@
         top: 50%;
         transform-origin: center;
         transform: translate(-50%,  -50%);
-        transition: transform .5s .2s;
-        width: 534px;
+        width: 100%;
+        @media screen and (min-width: $lg-width){
+          left: calc(50% - 24px);
+          width: 534px;
+
+        }
         img{
-          transform: translate(10px,10px) rotate(8deg);
+          width: 100%;
+          left: 0;
+          transform: rotate(8deg);
+          filter: drop-shadow(12px 10px 30px rgba(0,33,86,0.62));
         }
       }
     }

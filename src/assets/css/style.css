@@ -9305,25 +9305,18 @@ header .container .row {
 
 .compas-list__compas {
   position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: 40px 0;
-}
-
-.compas-list__compas .compas {
-  position: relative;
+  right: -60px;
+  top: 20px;
+  width: 245px;
+  height: 245px;
 }
 
 .compas-list__compas .compas__image {
   position: relative;
 }
 
-.compas-list__compas .compas__image img {
-  width: 110%;
-  position: relative;
-  left: -10%;
+.compas-list__compas .compas__image > img {
+  width: 100%;
 }
 
 .compas-list__compas .compas__arrow {
@@ -9336,18 +9329,17 @@ header .container .row {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: -webkit-transform .5s .2s;
-  transition: -webkit-transform .5s .2s;
-  -o-transition: transform .5s .2s;
-  transition: transform .5s .2s;
-  transition: transform .5s .2s, -webkit-transform .5s .2s;
-  width: 534px;
+  width: 100%;
 }
 
 .compas-list__compas .compas__arrow img {
-  -webkit-transform: translate(10px, 10px) rotate(8deg);
-  -ms-transform: translate(10px, 10px) rotate(8deg);
-  transform: translate(10px, 10px) rotate(8deg);
+  width: 100%;
+  left: 0;
+  -webkit-transform: rotate(8deg);
+  -ms-transform: rotate(8deg);
+  transform: rotate(8deg);
+  -webkit-filter: drop-shadow(12px 10px 30px rgba(0, 33, 86, 0.62));
+  filter: drop-shadow(12px 10px 30px rgba(0, 33, 86, 0.62));
 }
 
 .compas-list__text .text p {
@@ -11917,12 +11909,9 @@ header .container .row {
   }
 
   .compas-list__compas {
-    padding: 60px 0;
-  }
-
-  .compas-list__compas .compas {
-    width: 618px;
-    height: 100%;
+    width: 300px;
+    height: 300px;
+    right: 0;
   }
 
   .compas-list__text .text p {
@@ -12909,6 +12898,32 @@ header .container .row {
 
   .title-text-image__text {
     margin-bottom: 0;
+  }
+
+  .compas-list__compas {
+    padding: 60px 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .compas-list__compas .compas {
+    position: relative;
+    width: 618px;
+    height: 100%;
+  }
+
+  .compas-list__compas .compas__image > img {
+    width: 110%;
+    position: relative;
+    left: -10%;
+  }
+
+  .compas-list__compas .compas__arrow {
+    left: calc(50% - 24px);
+    width: 534px;
   }
 
   .compas-list__text {

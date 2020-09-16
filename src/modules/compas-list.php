@@ -2,7 +2,7 @@
     <div class="compas-list__compas">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-7 p-0 pr-sm-3 pl-sm-3">
+                <div class="col-12 col-lg-7 p-0 pr-sm-3 pl-sm-3">
                     <div class="compas">
                         <div class="compas__image">
                             <img src="./assets/img/compas-list/compass.svg" alt="">

@@ -288,36 +288,43 @@
         }
         if (isSet($('.compas-list'))) {
             var img = $('.compas__arrow');
-            if (img.length > 0) {
-                var offset = img.offset();
-                var compasList = $('.compas-list__text ul');
-
-                function imageRotate(degree) {
-                    img.css('-moz-transform', 'translate(-50%,  -50%) rotate(' + degree + 'deg)');
-                    img.css('-webkit-transform', 'translate(-50%,  -50%) rotate(' + degree + 'deg)');
-                    img.css('-o-transform', 'translate(-50%,  -50%) rotate(' + degree + 'deg)');
-                    img.css('-ms-transform', 'translate(-50%,  -50%) rotate(' + degree + 'deg)');
-                }
-
-                var oldDegree = 0;
-                compasList.on('mouseenter', 'li', function () {
-                    var center_x = (offset.left) + (img.width() / 2);
-                    var center_y = (offset.top) + (img.height() / 2);
-                    var mouse_x = $(this).offset().left;
-                    var mouse_y = $(this).offset().top + $(this).height() / 2;
-                    var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
-                    var degree = (radians * (180 / Math.PI) * -1) + 90;
-                    var eDegree = Math.abs(degree - oldDegree) / 2;
-                    imageRotate(degree - eDegree);
-                    setTimeout(function () {
-                        imageRotate(degree + eDegree)
-                        setTimeout(function () {
-                            imageRotate(degree)
-                        },200)
-                    },200)
-
-                })
+            var initialState = 0;
+            var offset = img.offset();
+            var compasList = $('.compas-list__text ul');
+            if (initialState === 0) {
+                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+                initialState = 1;
             }
+            compasList.on('mouseleave', function () {
+                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+            })
+
+            compasList.on('mouseenter', 'li', function () {
+                var center_x = (offset.left) + (img.width() / 2);
+                var center_y = (offset.top) + (img.height() / 2);
+                var mouse_x = $(this).offset().left + $(this).width();
+                if($(window).width() >= mdWidth){
+                    mouse_x = $(this).offset().left + $(this).width() / 2;
+                }
+                if($(window).width() >= lgWidth){
+                    mouse_x = $(this).offset().left;
+                }
+                var mouse_y = $(this).offset().top + $(this).height() / 2;
+                var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+                var degree = (radians * (180 / Math.PI) * -1) + 90;
+                var getter = gsap.getProperty(".compas__arrow");
+                var currentDegree = getter('rotate');
+                var diff = Math.abs(degree - currentDegree) / 10;
+                var duration = (diff < 1) ? 2 * 2 : 2;
+                var amplitude = (diff < 1) ? 2 * diff : 2;
+                console.log(duration)
+                gsap.to(".compas__arrow", {
+                    ease: 'elastic(' + amplitude + ',0.3)',
+                    duration: duration,
+                    rotation: degree
+                });
+            })
+
 
         }
 

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./assets/css/swiper.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script defer src="./assets/js/jquery-3.4.1.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+<!--    <script defer src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase.min.js"></script>-->
     <script defer src="./assets/js/swiper.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
 </head>
