@@ -237,7 +237,7 @@
                 if (failFlag == 1) {
                     console.log('fail');
                     setTimeout(function () {
-                        that.find('.submit-link').removeClass('load').addClass('success');
+                        that.find('.submit-link').removeClass('load').addClass('error');
                     }, 500)
                 } else {
                     console.log('success');
