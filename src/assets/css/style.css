@@ -7908,7 +7908,7 @@ textarea {
   background: transparent;
   font-size: 16px;
   line-height: 22px;
-  padding: 15px 13px;
+  padding: 12px 13px 14px;
   width: 100%;
   margin-top: 10px;
   display: block;
@@ -8017,10 +8017,10 @@ textarea {
   text-decoration: none;
 }
 
-.lm-link:hover span,
-.submit-link:hover span {
-  -webkit-animation: bounceRight .6s ease-out forwards;
-  animation: bounceRight .6s ease-out forwards;
+.lm-link:hover span::before,
+.submit-link:hover span::before {
+  -webkit-animation: goRight .6s ease-out forwards;
+  animation: goRight .6s ease-out forwards;
 }
 
 .lm-link:active,
@@ -8032,6 +8032,7 @@ textarea {
 
 .lm-link span,
 .submit-link span {
+  overflow: hidden;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -8040,6 +8041,9 @@ textarea {
   outline: none;
   border: none;
   position: relative;
+  -webkit-transition: background-color .5s;
+  -o-transition: background-color .5s;
+  transition: background-color .5s;
 }
 
 .lm-link span::before,
@@ -8060,6 +8064,12 @@ textarea {
 .submit-link.load span {
   -webkit-animation: load .5s linear infinite;
   animation: load .5s linear infinite;
+}
+
+.submit-link.error span {
+  -webkit-animation: error .5s ease-out forwards;
+  animation: error .5s ease-out forwards;
+  background-color: #e92731;
 }
 
 .image {
@@ -8115,57 +8125,95 @@ textarea {
   }
 }
 
-@-webkit-keyframes bounceRight {
+@-webkit-keyframes error {
   from {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  25% {
-    -webkit-transform: translateX(20px);
-    transform: translateX(20px);
-  }
-
-  50% {
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
-  }
-
-  75% {
-    -webkit-transform: translateX(10px);
-    transform: translateX(10px);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   to {
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
+    -webkit-transform: rotate(calc(360deg*3));
+    transform: rotate(calc(360deg*3));
   }
 }
 
-@keyframes bounceRight {
+@keyframes error {
   from {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-
-  25% {
-    -webkit-transform: translateX(20px);
-    transform: translateX(20px);
-  }
-
-  50% {
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
-  }
-
-  75% {
-    -webkit-transform: translateX(10px);
-    transform: translateX(10px);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   to {
-    -webkit-transform: translateX(0px);
-    transform: translateX(0px);
+    -webkit-transform: rotate(calc(360deg*3));
+    transform: rotate(calc(360deg*3));
+  }
+}
+
+@-webkit-keyframes goRight {
+  from {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+    -webkit-transform: translate(-150%, -50%);
+    transform: translate(-150%, -50%);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes goRight {
+  from {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    -webkit-transform: translate(100%, -50%);
+    transform: translate(100%, -50%);
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+    -webkit-transform: translate(-150%, -50%);
+    transform: translate(-150%, -50%);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 1;
   }
 }
 
@@ -8214,7 +8262,7 @@ header .container .row {
 }
 
 .header__logo {
-  max-width: 135px;
+  max-width: 235px;
   position: relative;
   z-index: 10;
 }
@@ -8324,6 +8372,15 @@ header .container .row {
   position: relative;
 }
 
+.top-slider__block .swiper-slide .top-slider__slide-content .content__block {
+  opacity: 0;
+}
+
+.top-slider__block .swiper-slide-active .top-slider__slide-content .content__block {
+  -webkit-animation: SlideUpFade 1s .1s forwards;
+  animation: SlideUpFade 1s .1s forwards;
+}
+
 .top-slider__block .slider-control {
   position: absolute;
   left: 50%;
@@ -8392,7 +8449,7 @@ header .container .row {
   top: 0;
   width: 100%;
   height: 100%;
-  padding: 81px 0;
+  padding: 87px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8401,7 +8458,11 @@ header .container .row {
   align-items: flex-end;
 }
 
-.top-slider__slide-content h1 {
+.top-slider__slide-content .content__block * {
+  color: white;
+}
+
+.top-slider__slide-content .content__block h1 {
   font-size: 22px;
   color: white;
   font-weight: bold;
@@ -8515,6 +8576,34 @@ header .container .row {
   to {
     -webkit-transform: scale(1);
     transform: scale(1);
+  }
+}
+
+@-webkit-keyframes SlideUpFade {
+  from {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideUpFade {
+  from {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -8806,8 +8895,8 @@ header .container .row {
 .logo-slider__slide .image {
   width: 100%;
   max-width: 119px;
-  height: 57px;
-  margin-bottom: 3px;
+  height: 40px;
+  margin-bottom: 11px;
 }
 
 .logo-slider__slide .image img {
@@ -9046,6 +9135,10 @@ header .container .row {
 .job-form__form {
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+.job-form__form label {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .text-5-7 {
@@ -9294,7 +9387,7 @@ header .container .row {
 }
 
 .footer__logo {
-  max-width: 162px;
+  max-width: 235px;
 }
 
 .footer__logo img {
@@ -11408,7 +11501,7 @@ header .container .row {
     padding: 141px 0;
   }
 
-  .top-slider__slide-content h1 {
+  .top-slider__slide-content .content__block h1 {
     font-size: 40px;
     line-height: 54px;
   }
@@ -11612,7 +11705,7 @@ header .container .row {
 
   .job-form__text p {
     font-size: 18px;
-    line-height: 33px;
+    line-height: 28px;
   }
 
   .job-form__text h2 {

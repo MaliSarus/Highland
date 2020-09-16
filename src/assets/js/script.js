@@ -44,9 +44,9 @@
             }
         });
         nameInput.on('input', function () {
-            $(this).val($(this).val().replace(/[^A-z]/, ''));
+            $(this).val($(this).val().replace(/[^A-z\s]/, ''));
             var valLength = $(this).val().length;
-            if (valLength > 3) {
+            if (valLength > 2) {
                 $(this).parent().removeClass('invalid').addClass('valid');
             } else {
                 $(this).parent().removeClass('valid').addClass('invalid');
@@ -171,7 +171,7 @@
         }
         if (isSet($('.tabs'))) {
             var tabsPage = $('.tabs__page');
-            var tabs = $('.tabs ul');
+            var tabs = $('.tabs__tabs ul');
             var pageList = tabsPage.find('ul');
             tabsPage.each(function () {
                 if (isSet($(this).find('.lm-link'))) {
@@ -224,6 +224,10 @@
                 });
                 if (failFlag == 1) {
                     console.log('fail');
+                    var that = $(this);
+                    setTimeout(function () {
+                        that.find('.submit-link').removeClass('load').addClass('error');
+                    },500)
                 } else {
                     console.log('success');
                 }

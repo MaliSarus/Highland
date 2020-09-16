@@ -85,7 +85,7 @@
       line-height: 23px;
       @media screen and (min-width: $md-width) {
         font-size: 18px;
-        line-height: 33px;
+        line-height: 28px;
       }
     }
 
@@ -107,6 +107,9 @@
     margin-bottom: 40px;
     @media screen and (min-width: $lg-width){
       margin-top: 0;
+    }
+    label{
+      color: rgba(black, .7);
     }
   }
 }
