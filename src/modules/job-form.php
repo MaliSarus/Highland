@@ -2,7 +2,7 @@
     <div class="job-form__background">
         <div class="container-fluid h-100">
            <div class="row h-100">
-               <div class="col-lg-7 p-0 h-100">
+               <div class="col-lg-12 p-0 h-100">
                    <div class="image image_with-cover">
                        <img src="./assets/img/job-form/1.png" alt="">
                    </div>
@@ -49,10 +49,10 @@
                                         <label for="job-form-phone">Telephone<input class="num-input" type="text"
                                                                                     id="job-form-phone"
                                                                                     name="job-form-phone"></label>
-                                        <label for="job-form-resume" class="textarea valid">Resume Submit<input type="text" id="job-form-resume"
-                                                                                         name="job-form-resume"></label>
                                         <label for="job-form-text" class="textarea valid">Comments<input type="text" id="job-form-text"
                                                                                   name="job-form-text"></label>
+                                        <label for="job-form-resume" class="file textarea valid"><input type="file" id="job-form-resume"
+                                                                                                   name="job-form-resume">Resume Submit</label>
                                     </div>
                                     <div class="form-row-custom">
                                         <button class="submit-link" type="submit">Send Request</button>

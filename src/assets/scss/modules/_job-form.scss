@@ -107,9 +107,19 @@
     margin-bottom: 40px;
     @media screen and (min-width: $lg-width){
       margin-top: 0;
+      margin-bottom: 0;
     }
-    label{
+    .file{
+      margin-bottom: 0;
+    }
+    label, label.textarea{
       color: rgba(black, .7);
+    }
+    .submit-link{
+      margin-top: 25px;
+      @media screen and (min-width: $md-width){
+        margin-top: 43px;
+      }
     }
   }
 }

@@ -93,6 +93,26 @@ label{
   line-height: 19px;
   font-weight: bold;
   margin-bottom: 20px;
+  &.file{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+      &::before{
+        transform: translateZ(0) scale(1.1);
+      }
+    }
+    &::before{
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background: url("../img/interface/add-icon.svg");
+      content: '';
+      margin-right: 6px;
+      transform: translateZ(0);
+      transition: transform .25s;
+    }
+  }
   &.valid{
     color:#10ce6f;
     input{
@@ -147,6 +167,10 @@ input, textarea{
 
 input{
   font-weight: 600;
+}
+
+input[type="file"]{
+  display: none;
 }
 
 textarea{

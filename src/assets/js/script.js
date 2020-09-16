@@ -13,7 +13,7 @@
     }
 
     function uiDefaultSet() {
-        if (isSet($('.top-block'))){
+        if (isSet($('.top-block'))) {
             $('header').addClass('dark')
         }
         var mailInput = $('[type="email"]');
@@ -157,6 +157,17 @@
         }
     }
 
+    function jobFormBackgroundWidth() {
+        if ($(window).width() >= lgWidth) {
+            var bgImage = $('.job-form__background .image');
+            var jobForm = $('.job-form__form').parent();
+            var jobFormMargin = jobForm.outerWidth(true) - jobForm.outerWidth();
+            var jobFormPos = jobForm.position().left;
+            console.log(jobFormPos);
+            bgImage.width(jobFormPos + jobFormMargin / 2)
+        }
+    }
+
     //Готовность документа
     $(document).ready(function () {
 
@@ -227,7 +238,7 @@
                     var that = $(this);
                     setTimeout(function () {
                         that.find('.submit-link').removeClass('load').addClass('error');
-                    },500)
+                    }, 500)
                 } else {
                     console.log('success');
                 }
@@ -255,10 +266,16 @@
                 });
                 if (failFlag == 1) {
                     console.log('fail');
+                    var that = $(this);
+                    setTimeout(function () {
+                        that.find('.submit-link').removeClass('load').addClass('error');
+                    }, 500)
                 } else {
                     console.log('success');
                 }
             });
+
+            jobFormBackgroundWidth();
         }
 
 
@@ -268,6 +285,7 @@
     //Масштаб окна
     $(window).on('resize', function () {
         if (isSet($('.job-form'))) {
+            jobFormBackgroundWidth();
             if ($(window).width() < lgWidth) {
                 var background = $('.job-form__background img').attr('src');
                 $('.job-form__container').css({

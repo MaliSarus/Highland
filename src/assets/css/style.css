@@ -7869,6 +7869,37 @@ label {
   margin-bottom: 20px;
 }
 
+label.file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+label.file:hover::before {
+  -webkit-transform: translateZ(0) scale(1.1);
+  transform: translateZ(0) scale(1.1);
+}
+
+label.file::before {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: url("../img/interface/add-icon.svg");
+  content: '';
+  margin-right: 6px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  -o-transition: transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+}
+
 label.valid {
   color: #10ce6f;
 }
@@ -7938,6 +7969,10 @@ textarea:focus {
 
 input {
   font-weight: 600;
+}
+
+input[type="file"] {
+  display: none;
 }
 
 textarea {
@@ -9137,8 +9172,17 @@ header .container .row {
   margin-bottom: 40px;
 }
 
-.job-form__form label {
+.job-form__form .file {
+  margin-bottom: 0;
+}
+
+.job-form__form label,
+.job-form__form label.textarea {
   color: rgba(0, 0, 0, 0.7);
+}
+
+.job-form__form .submit-link {
+  margin-top: 25px;
 }
 
 .text-5-7 {
@@ -11712,6 +11756,10 @@ header .container .row {
     margin-bottom: 33px;
   }
 
+  .job-form__form .submit-link {
+    margin-top: 43px;
+  }
+
   .text-5-7 {
     padding-top: 70px;
     padding-bottom: 80px;
@@ -12759,6 +12807,7 @@ header .container .row {
 
   .job-form__form {
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .text-5-7.quote-and-text .text-5-7__right .text {
