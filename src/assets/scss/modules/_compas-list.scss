@@ -1,7 +1,45 @@
 .compas-list{
+  overflow: hidden;
   padding: 40px 0;
+  position: relative;
   @media screen and (min-width: $md-width){
     padding: 60px 0;
+  }
+  &__compas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 40px 0;
+    @media screen and (min-width: $md-width){
+      padding: 60px 0;
+    }
+    .compas{
+      position: relative;
+      @media screen and (min-width: $md-width){
+        width: 618px;
+        height: 100%;
+      }
+      &__image{
+        position: relative;
+        img{
+          width: 110%;
+          position: relative;
+          left: -10%;
+        }
+      }
+      &__arrow{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,  -50%);
+        width: 534px;
+        img{
+          transform: translate(10px,10px) rotate(8deg);
+        }
+      }
+    }
   }
   &__text{
     @media screen and (min-width: $lg-width){

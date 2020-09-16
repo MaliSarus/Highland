@@ -171,15 +171,17 @@
     //Готовность документа
     $(document).ready(function () {
 
-
         hamburgerInit();
         uiDefaultSet();
+
         if (isSet($('.top-slider'))) {
             topSliderInit();
         }
+
         if (isSet($('.logo-slider'))) {
             logoSliderInit();
         }
+
         if (isSet($('.tabs'))) {
             var tabsPage = $('.tabs__page');
             var tabs = $('.tabs__tabs ul');
@@ -217,9 +219,9 @@
                         animationFlag = 0;
                     })
                 }
-                // $(imageEl[index]).removeClass('hidden').addClass('active')
             })
         }
+
         if (isSet($('.contact-form'))) {
             var contactForm = $('.contact-form__form form');
             var contactFormSubmit = contactForm.find('.submit-link');
@@ -283,6 +285,25 @@
             });
 
             jobFormBackgroundWidth();
+        }
+        if (isSet($('.compas-list'))){
+            var img = $('.compas__arrow');
+            if(img.length > 0){
+                var offset = img.offset();
+                function mouse(evt){
+                    var center_x = (offset.left) + (img.width()/2);
+                    var center_y = (offset.top) + (img.height()/2);
+                    var mouse_x = evt.pageX; var mouse_y = evt.pageY;
+                    var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+                    var degree = (radians * (180 / Math.PI) * -1) + 180;
+                    img.css('-moz-transform', 'translate(-50%,  -50%) rotate('+degree+'deg)');
+                    img.css('-webkit-transform', 'translate(-50%,  -50%) rotate('+degree+'deg)');
+                    img.css('-o-transform', 'translate(-50%,  -50%) rotate('+degree+'deg)');
+                    img.css('-ms-transform', 'translate(-50%,  -50%) rotate('+degree+'deg)');
+                }
+                $(document).mousemove(mouse);
+            }
+
         }
 
 

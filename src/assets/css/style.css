@@ -9298,7 +9298,48 @@ header .container .row {
 }
 
 .compas-list {
+  overflow: hidden;
   padding: 40px 0;
+  position: relative;
+}
+
+.compas-list__compas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.compas-list__compas .compas {
+  position: relative;
+}
+
+.compas-list__compas .compas__image {
+  position: relative;
+}
+
+.compas-list__compas .compas__image img {
+  width: 110%;
+  position: relative;
+  left: -10%;
+}
+
+.compas-list__compas .compas__arrow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 534px;
+}
+
+.compas-list__compas .compas__arrow img {
+  -webkit-transform: translate(10px, 10px) rotate(8deg);
+  -ms-transform: translate(10px, 10px) rotate(8deg);
+  transform: translate(10px, 10px) rotate(8deg);
 }
 
 .compas-list__text .text p {
@@ -11865,6 +11906,15 @@ header .container .row {
 
   .compas-list {
     padding: 60px 0;
+  }
+
+  .compas-list__compas {
+    padding: 60px 0;
+  }
+
+  .compas-list__compas .compas {
+    width: 618px;
+    height: 100%;
   }
 
   .compas-list__text .text p {
