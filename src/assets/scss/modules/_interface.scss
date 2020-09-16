@@ -103,20 +103,57 @@
       width: 20px;
       height: 20px;
       background: url("../img/interface/button-arrow.svg") center / contain no-repeat;
+      transition: background .2s;
     }
   }
 }
 
 .submit-link{
   &.load{
+    &:hover{
+      span {
+        &::before {
+          animation: none;
+        }
+      }
+    }
     span {
       animation: load .5s linear infinite;
     }
   }
   &.error{
+    &:hover{
+      span {
+        &::before {
+          animation: none;
+        }
+      }
+    }
     span{
-      animation: error .5s ease-out forwards;
+      animation: answer .5s ease-out forwards;
       background-color: #e92731;
+      &::before{
+        width: 16px;
+        height: 16px;
+        background-image: url("../img/interface/button-cross.svg");
+      }
+    }
+  }
+  &.success{
+    &:hover{
+      span {
+        &::before {
+          animation: none;
+        }
+      }
+    }
+    span{
+      animation: answer .5s ease-out forwards;
+      &::before{
+        width: 16px;
+        height: 16px;
+        background-image: url("../img/interface/button-check.svg");
+      }
     }
   }
 }
@@ -152,7 +189,7 @@
     transform: rotate(calc(360deg * 3));
   }
 }
-@keyframes error{
+@keyframes answer{
   from{
     transform: rotate(0deg);
   }

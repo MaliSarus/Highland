@@ -8094,6 +8094,14 @@ textarea {
   width: 20px;
   height: 20px;
   background: url("../img/interface/button-arrow.svg") center/contain no-repeat;
+  -webkit-transition: background .2s;
+  -o-transition: background .2s;
+  transition: background .2s;
+}
+
+.submit-link.load:hover span::before {
+  -webkit-animation: none;
+  animation: none;
 }
 
 .submit-link.load span {
@@ -8101,10 +8109,37 @@ textarea {
   animation: load .5s linear infinite;
 }
 
+.submit-link.error:hover span::before {
+  -webkit-animation: none;
+  animation: none;
+}
+
 .submit-link.error span {
-  -webkit-animation: error .5s ease-out forwards;
-  animation: error .5s ease-out forwards;
+  -webkit-animation: answer .5s ease-out forwards;
+  animation: answer .5s ease-out forwards;
   background-color: #e92731;
+}
+
+.submit-link.error span::before {
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/interface/button-cross.svg");
+}
+
+.submit-link.success:hover span::before {
+  -webkit-animation: none;
+  animation: none;
+}
+
+.submit-link.success span {
+  -webkit-animation: answer .5s ease-out forwards;
+  animation: answer .5s ease-out forwards;
+}
+
+.submit-link.success span::before {
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/interface/button-check.svg");
 }
 
 .image {
@@ -8160,7 +8195,7 @@ textarea {
   }
 }
 
-@-webkit-keyframes error {
+@-webkit-keyframes answer {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -8172,7 +8207,7 @@ textarea {
   }
 }
 
-@keyframes error {
+@keyframes answer {
   from {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);

@@ -227,6 +227,7 @@
                 event.preventDefault();
                 var labels = $('.contact-form__form form label');
                 var failFlag = 0;
+                var that = $(this);
                 labels.each(function () {
                     if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
                         failFlag = 1;
@@ -235,12 +236,14 @@
                 });
                 if (failFlag == 1) {
                     console.log('fail');
-                    var that = $(this);
                     setTimeout(function () {
-                        that.find('.submit-link').removeClass('load').addClass('error');
+                        that.find('.submit-link').removeClass('load').addClass('success');
                     }, 500)
                 } else {
                     console.log('success');
+                    setTimeout(function () {
+                        that.find('.submit-link').removeClass('load').addClass('success');
+                    }, 500)
                 }
             });
         }
@@ -258,6 +261,7 @@
                 event.preventDefault();
                 var labels = $('.job-form__form form label');
                 var failFlag = 0;
+                var that = $(this);
                 labels.each(function () {
                     if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
                         failFlag = 1;
@@ -266,12 +270,15 @@
                 });
                 if (failFlag == 1) {
                     console.log('fail');
-                    var that = $(this);
+
                     setTimeout(function () {
                         that.find('.submit-link').removeClass('load').addClass('error');
                     }, 500)
                 } else {
                     console.log('success');
+                    setTimeout(function () {
+                        that.find('.submit-link').removeClass('load').addClass('success');
+                    }, 500)
                 }
             });
 
