@@ -9330,9 +9330,17 @@ header .container .row {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
+  transform-origin: center;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform .5s .2s;
+  transition: -webkit-transform .5s .2s;
+  -o-transition: transform .5s .2s;
+  transition: transform .5s .2s;
+  transition: transform .5s .2s, -webkit-transform .5s .2s;
   width: 534px;
 }
 

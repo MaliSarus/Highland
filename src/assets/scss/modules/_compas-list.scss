@@ -33,7 +33,9 @@
         position: absolute;
         left: 50%;
         top: 50%;
+        transform-origin: center;
         transform: translate(-50%,  -50%);
+        transition: transform .5s .2s;
         width: 534px;
         img{
           transform: translate(10px,10px) rotate(8deg);
