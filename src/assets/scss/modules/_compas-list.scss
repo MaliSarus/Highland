@@ -93,6 +93,29 @@
               top: calc(60px / 2 - 2.5px);
             }
           }
+          span{
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            &:hover{
+              &::before{
+                transform: translateY(0);
+              }
+            }
+            &::before{
+              position: absolute;
+              display: block;
+              content: '';
+              width: 100%;
+              height: 50%;
+              left: 0;
+              bottom: 0;
+              background-color: rgba($accent-color,.2);
+              transform: translateY(100%);
+              transition: transform .25s;
+              z-index: 0;
+            }
+          }
         }
       }
     }

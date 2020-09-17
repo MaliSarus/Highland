@@ -9390,6 +9390,38 @@ header .container .row {
   top: calc(23px / 2 - 2.5px);
 }
 
+.compas-list__text .text ul li span {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.compas-list__text .text ul li span:hover::before {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.compas-list__text .text ul li span::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(1, 95, 255, 0.2);
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  -o-transition: transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+  z-index: 0;
+}
+
 .title-content-image-text {
   padding-top: 30px;
   padding-bottom: 40px;

@@ -2,7 +2,7 @@
     <div class="compas-list__compas">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-lg-7 p-0 pr-sm-3 pl-sm-3">
+                <div class="col-12 col-lgspan-7 p-0 pr-sm-3 pl-sm-3">
                     <div class="compas">
                         <div class="compas__image">
                             <img src="./assets/img/compas-list/compass.svg" alt="">
@@ -29,11 +29,11 @@
                         <div class="text">
                             <p>The values core to our firm:</p>
                             <ul>
-                                <li>Integrity</li>
-                                <li>Discipline</li>
-                                <li>Client-centric</li>
-                                <li>Respect for Stakeholders</li>
-                                <li> Passion for Creating Value</li>
+                                <li><span>Integrity</span></li>
+                                <li><span>Discipline</span></li>
+                                <li><span>Client-centric</span></li>
+                                <li><span>Respect for Stakeholders</span></li>
+                                <li><span>Passion for Creating Value</span></li>
                             </ul>
                         </div>
                     </div>
