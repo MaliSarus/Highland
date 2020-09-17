@@ -8301,7 +8301,7 @@ header {
   -o-transition: background-color .25s, backdrop-filter .25s;
   transition: background-color .25s, backdrop-filter .25s;
   transition: background-color .25s, backdrop-filter .25s, -webkit-backdrop-filter .25s;
-  padding: 25px 0;
+  padding: 15px 0;
 }
 
 header.dark {
@@ -8719,12 +8719,6 @@ header .container .row {
 
 .top-block__desktop .text * {
   color: white;
-}
-
-.top-block__desktop .text h2 {
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
 }
 
 .top-block__desktop .text p {
@@ -11725,6 +11719,12 @@ header .container .row {
 
   .top-block__desktop .text {
     min-height: 550px;
+  }
+
+  .top-block__desktop .text h2 {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
   }
 
   .top-block__desktop .text p {

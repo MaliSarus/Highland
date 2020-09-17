@@ -36,7 +36,9 @@
       }
 
       h2 {
-        flex-grow: 1;
+        @media screen and (min-width: $md-width){
+          flex-grow: 1;
+        }
       }
 
       p {

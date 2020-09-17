@@ -5,7 +5,7 @@ header {
   left: 0;
   z-index: 500;
   transition: background-color .25s, backdrop-filter .25s;
-  padding: 25px 0;
+  padding: 15px 0;
   @media screen and (min-width: $md-width){
     padding: 0;
     height: 92px;
