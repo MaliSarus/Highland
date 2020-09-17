@@ -7877,6 +7877,9 @@ label.file {
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  -webkit-transition: color .25s;
+  -o-transition: color .25s;
+  transition: color .25s;
 }
 
 label.file:hover::before {
@@ -7909,19 +7912,19 @@ label.valid input {
   border-color: #10ce6f;
 }
 
-label.valid.textarea {
+label.valid.no-required {
   color: #B1B1B3;
 }
 
-label.valid.textarea input {
+label.valid.no-required input {
   border-color: #B1B1B3;
 }
 
-label.valid.textarea input:hover {
+label.valid.no-required input:hover {
   border-color: black;
 }
 
-label.valid.textarea input:focus {
+label.valid.no-required input:focus {
   border-color: #015FFF;
 }
 
@@ -9212,8 +9215,38 @@ header .container .row {
 }
 
 .job-form__form label,
-.job-form__form label.textarea {
+.job-form__form label.no-required {
   color: rgba(0, 0, 0, 0.7);
+}
+
+.job-form__form textarea {
+  height: 100px;
+}
+
+.job-form__form label.file.valid.no-required:hover {
+  color: black;
+}
+
+.job-form__form label.valid {
+  color: #10ce6f;
+}
+
+.job-form__form label.valid.no-required {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.job-form__form label.valid input {
+  color: #10ce6f;
+  border-color: #10ce6f;
+}
+
+.job-form__form label.invalid {
+  color: #e92731;
+}
+
+.job-form__form label.invalid input {
+  color: #e92731;
+  border-color: #e92731;
 }
 
 .job-form__form .submit-link {
@@ -11813,6 +11846,7 @@ header .container .row {
 
   .contact-form__form .form-column label[for="contact-form-text"] {
     margin-top: 0;
+    padding-left: 20px;
   }
 
   .contact-form__form .form-column label[for="contact-form-text"] textarea {
@@ -11830,10 +11864,6 @@ header .container .row {
 
   .job-form__text h2 {
     margin-bottom: 33px;
-  }
-
-  .job-form__form .submit-link {
-    margin-top: 43px;
   }
 
   .text-5-7 {
@@ -12890,6 +12920,10 @@ header .container .row {
   .job-form__form {
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .job-form__form .submit-link {
+    margin-top: 43px;
   }
 
   .text-5-7.quote-and-text .text-5-7__right .text {

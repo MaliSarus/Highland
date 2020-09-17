@@ -24,7 +24,7 @@
                                     <input class="num-input" id="contact-form-phone" name="contact-form-phone" type="text"></label>
                             </div>
                             <div class="form-column">
-                                <label class="textarea valid" for="contact-form-text">Comments
+                                <label class="no-required valid" for="contact-form-text">Comments
                                     <textarea id="contact-form-text"></textarea></label>
                             </div>
                         </div>

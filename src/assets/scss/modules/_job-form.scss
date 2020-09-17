@@ -112,12 +112,40 @@
     .file{
       margin-bottom: 0;
     }
-    label, label.textarea{
+    label, label.no-required{
       color: rgba(black, .7);
+    }
+    textarea{
+      height: 100px;
+    }
+    label{
+      &.file.valid.no-required{
+        &:hover{
+          color: black;
+        }
+      }
+      &.valid {
+        color: #10ce6f;
+        &.no-required{
+          color: rgba(black, .7);
+        }
+
+        input {
+          color: #10ce6f;
+          border-color: #10ce6f;
+        }
+      }
+      &.invalid{
+        color: #e92731;
+        input{
+          color: #e92731;
+          border-color: #e92731;
+        }
+      }
     }
     .submit-link{
       margin-top: 25px;
-      @media screen and (min-width: $md-width){
+      @media screen and (min-width: $lg-width){
         margin-top: 43px;
       }
     }

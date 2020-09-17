@@ -1,13 +1,13 @@
 <section class="job-form">
     <div class="job-form__background">
         <div class="container-fluid h-100">
-           <div class="row h-100">
-               <div class="col-lg-12 p-0 h-100">
-                   <div class="image image_with-cover">
-                       <img src="./assets/img/job-form/1.png" alt="">
-                   </div>
-               </div>
-           </div>
+            <div class="row h-100">
+                <div class="col-lg-12 p-0 h-100">
+                    <div class="image image_with-cover">
+                        <img src="./assets/img/job-form/1.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-fluid container-lg">
@@ -24,7 +24,8 @@
                                     <div class="job-form__text">
                                         <div class="text">
                                             <h2>Work with Us</h2>
-                                            <p>We are always looking for talented individuals that share our passion for impacting
+                                            <p>We are always looking for talented individuals that share our passion for
+                                                impacting
                                                 the
                                                 world through innovation</p>
                                         </div>
@@ -42,17 +43,21 @@
                             <div class="col-12">
                                 <form action="#">
                                     <div class="form-row-custom">
-                                        <label for="job-form-name">Name<input class="name-input" type="text" id="job-form-name"
+                                        <label for="job-form-name">Name<input class="name-input" type="text"
+                                                                              id="job-form-name"
                                                                               name="job-form-name"></label>
                                         <label for="job-form-email">Email<input type="email" id="job-form-email"
                                                                                 name="job-form-email"></label>
                                         <label for="job-form-phone">Telephone<input class="num-input" type="text"
                                                                                     id="job-form-phone"
                                                                                     name="job-form-phone"></label>
-                                        <label for="job-form-text" class="textarea valid">Comments<input type="text" id="job-form-text"
-                                                                                  name="job-form-text"></label>
-                                        <label for="job-form-resume" class="file textarea valid"><input type="file" id="job-form-resume"
-                                                                                                   name="job-form-resume">Resume Submit</label>
+                                        <label for="job-form-text" class="no-required valid">Comments<textarea
+                                                    id="job-form-text"
+                                                    name="job-form-text"></textarea></label>
+                                        <label for="job-form-resume" class="file no-required valid"><input type="file"
+                                                                                                           id="job-form-resume"
+                                                                                                           name="job-form-resume">Add
+                                            Resume</label>
                                     </div>
                                     <div class="form-row-custom">
                                         <button class="submit-link" type="submit">Send Request</button>

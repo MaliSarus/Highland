@@ -288,36 +288,32 @@
         }
         if (isSet($('.compas-list'))) {
             var img = $('.compas__arrow');
-            var initialState = 0;
-            var offset = img.offset();
             var compasList = $('.compas-list__text ul');
-            if (initialState === 0) {
-                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-                initialState = 1;
-            }
-            compasList.on('mouseleave', function () {
-                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-            })
+
+            gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
+
+            // compasList.on('mouseleave', function () {
+            //     console.log('mouseout');
+            //     gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+            // })
 
             compasList.on('mouseenter', 'li', function () {
+                img.removeAttr('style');
+                var offset = img.offset();
                 var center_x = (offset.left) + (img.width() / 2);
                 var center_y = (offset.top) + (img.height() / 2);
-                var mouse_x = $(this).offset().left + $(this).width();
-                if($(window).width() >= mdWidth){
-                    mouse_x = $(this).offset().left + $(this).width() / 2;
-                }
-                if($(window).width() >= lgWidth){
+                var mouse_x = $(this).offset().left + $(this).width() / 2;
+                if ($(window).width() >= mdWidth) {
                     mouse_x = $(this).offset().left;
                 }
                 var mouse_y = $(this).offset().top + $(this).height() / 2;
-                var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
-                var degree = (radians * (180 / Math.PI) * -1) + 90;
+                // var radians = Math.atan2(mouse_x - center_x, mouse_y - center_y);
+                var degree = Math.atan2(mouse_y - center_y, mouse_x - center_x) * 180 / Math.PI;
                 var getter = gsap.getProperty(".compas__arrow");
                 var currentDegree = getter('rotate');
                 var diff = Math.abs(degree - currentDegree) / 10;
                 var duration = (diff < 1) ? 2 * 2 : 2;
                 var amplitude = (diff < 1) ? 2 * diff : 2;
-                console.log(duration)
                 gsap.to(".compas__arrow", {
                     ease: 'elastic(' + amplitude + ',0.3)',
                     duration: duration,
