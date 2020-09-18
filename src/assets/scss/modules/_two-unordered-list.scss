@@ -1,0 +1,36 @@
+.two-unordered-lists{
+  background: $bg-color-gray;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  @media screen and (min-width: $md-width){
+    padding-top: 70px;
+    padding-bottom: 65px;
+  }
+  .list{
+    width: 100%;
+    p{
+      span{
+        display: inline-block;
+        padding-bottom: 10px;
+        border-bottom: 3px solid $accent-color;
+      }
+    }
+    ul{
+      margin-top: 20px;
+      @media screen and (min-width: $md-width){
+        margin-top: 30px;
+      }
+    }
+  }
+  &__left{
+    width: 100%;
+    padding-right: 50px;
+    margin-bottom: 40px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 0;
+    }
+  }
+  &__right{
+    width: 100%;
+  }
+}

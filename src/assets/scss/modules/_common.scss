@@ -11,11 +11,19 @@ $xl-width: 1200px;
 
 
 body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   &.hidden{
     overflow: hidden;
   }
+}
+
+main{
+  flex-grow: 1;
 }
 
 * {
@@ -51,24 +59,49 @@ p{
   line-height: 26px;
 }
 
-ul {
+ul, ol {
   li {
     list-style: none;
     position: relative;
-    padding-left: 20px;
     font-size: 18px;
     line-height: 23px;
     margin-bottom: 21px;
     @media screen and (min-width: $md-width) {
       font-size: 20px;
       line-height: 40px;
-      padding-left: 25px;
       margin-bottom: 5px;
     }
     &:last-child{
       margin-bottom: 0;
     }
+  }
+}
 
+ol{
+  counter-reset: myCounter;
+  li{
+    display: flex;
+    padding-left: 0;
+    &::before{
+      top: 7px;
+      position: relative;
+      display: block;
+      counter-increment: myCounter;
+      content: counter(myCounter, decimal-leading-zero);
+      font-size: 11px;
+      line-height: 100%;
+      text-transform: uppercase;
+      margin-right: 17px;
+    }
+  }
+}
+
+ul{
+  li{
+    padding-left: 20px;
+    @media screen and (min-width: $md-width){
+      padding-left: 25px;
+    }
     &::before {
       content: '';
       display: block;

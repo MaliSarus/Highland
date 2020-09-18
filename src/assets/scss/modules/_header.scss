@@ -12,14 +12,25 @@ header {
   }
   &.dark{
     background-color: rgba(0,0,0,0.59);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
     .header__menu {
-
+      ul{
+        li{
+          &.active{
+            &::after{
+              background-color: $accent-color;
+              width: 100%;
+              left: 0;
+              transform: none;
+            }
+          }
+        }
+      }
     }
   }
   &.scrolled{
     background: rgba(1, 95, 255, 0.7);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
   }
 
   .container {
@@ -44,11 +55,11 @@ header {
     }
   }
   &__logo {
-    max-width: 235px;
+    width: 235px;
     position: relative;
     z-index: 10;
     @media screen and (min-width: $md-width){
-      max-width: 162px;
+      width: 235px;
     }
 
     img {

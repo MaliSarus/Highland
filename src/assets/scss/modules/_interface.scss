@@ -180,6 +180,17 @@
     object-fit: cover;
   }
 }
+.list{
+  >p {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 23px;
+    @media screen and (min-width: $md-width) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+}
 
 
 @keyframes load{

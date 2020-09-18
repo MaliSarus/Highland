@@ -1,0 +1,47 @@
+.text-on-pic{
+  position: relative;
+  .text{
+    *{
+      color: white;
+    }
+  }
+  .list{
+    ul{
+      li{
+        &::before{
+          background-color: white;
+        }
+      }
+    }
+    ol{
+      li{
+        &::before{
+          color: white;
+        }
+      }
+    }
+  }
+  &__background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%);
+    }
+    video, image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}

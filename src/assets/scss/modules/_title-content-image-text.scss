@@ -99,7 +99,6 @@
   &__text{
     .text{
       @media screen and (min-width: $md-width){
-        height: 391px;
         column-count: 4;
         column-width: 270px;
         column-gap: 30px;

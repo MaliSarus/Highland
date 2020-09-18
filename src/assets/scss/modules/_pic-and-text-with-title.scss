@@ -1,0 +1,38 @@
+.pic-and-text-with-title{
+  padding: 40px 0;
+  @media screen and (min-width: $md-width){
+    padding: 80px 0;
+  }
+
+  &__title{
+    margin-bottom: 20px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 47px;
+    }
+  }
+  &__image{
+    margin-bottom: 20px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 0;
+    }
+    @media screen and (min-width: $lg-width){
+      padding-right: 40px;
+    }
+    .image{
+      height: 285px;
+      @media screen and (min-width: $md-width){
+        height: 331px;
+      }
+    }
+  }
+  &__text{
+    .list{
+      ul{
+        margin-top: 20px;
+        @media screen and (min-width: $md-width){
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+}

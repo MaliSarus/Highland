@@ -320,7 +320,7 @@
             // })
 
             compasList.on('mouseenter', 'li', function () {
-                // img.removeAttr('style');
+                img.removeAttr('style');
                 var offset = img.offset();
                 var center_x = (offset.left) + (img.width() / 2);
                 var center_y = (offset.top) + (img.height() / 2);
@@ -337,7 +337,7 @@
                 var duration = (diff < 1) ? 2 * 2 : 2;
                 var amplitude = (diff < 1) ? 2 * diff : 2;
                 gsap.killTweensOf('.compas__arrow');
-                gsap.fromTo(".compas__arrow", {rotation: 0}, {
+                gsap.to(".compas__arrow", {
                     ease: 'elastic(' + amplitude + ',0.3)',
                     duration: duration,
                     rotation: degree
