@@ -1,9 +1,9 @@
 .compas-list{
   overflow: hidden;
-  padding: 40px 0;
+  padding: 45px 0;
   position: relative;
   @media screen and (min-width: $md-width){
-    padding: 60px 0;
+    padding: 70px 0;
   }
   &__compas{
 
@@ -19,7 +19,7 @@
       right: 0;
     }
     @media screen and (min-width: $lg-width){
-      padding: 60px 0;
+      padding: 70px 0;
       position: absolute;
       left: 0;
       top: 0;
@@ -29,11 +29,17 @@
     .compas{
       @media screen and (min-width: $lg-width){
         position: relative;
-        width: 618px;
+        //width: 618px;
         height: 100%;
       }
       &__image{
         position: relative;
+        top: -15px;
+        @media screen and (min-width: $lg-width){
+          top: unset;
+          bottom: -35px;
+          //bottom: -10%;
+        }
         > img{
           width: 100%;
           @media screen and (min-width: $lg-width){
@@ -78,6 +84,9 @@
         }
       }
       ul{
+        & :last-child{
+          margin-bottom: 0;
+        }
         li{
           font-size: 18px;
           line-height: 23px;

@@ -19,6 +19,14 @@
         var mailInput = $('[type="email"]');
         var numInput = $('.num-input');
         var nameInput = $('.name-input');
+        var inputs = $('form input');
+
+        inputs.on('input change', function () {
+            var submitButton = $(this).parents('form').find('.submit-link');
+            if (submitButton.hasClass('error') || submitButton.hasClass('success')){
+                submitButton.removeClass(['error','success']);
+            }
+        })
 
         $('.lm-link').append('<span></span>');
         $('.submit-link').append('<span></span>');
@@ -34,7 +42,9 @@
             }
         });
         numInput.on('focus', function () {
-            $(this).val('+')
+            if ($(this).val() === '') {
+                $(this).val('+')
+            }
         })
         numInput.on('input', function () {
             if ($(this).val().search(numPattern) == 0) {
@@ -252,6 +262,7 @@
 
         if (isSet($('.job-form'))) {
             var jobForm = $('.job-form__form form');
+            var jobFileInput = $('.job-form__form form input[type="file"]');
             var jobFormSubmit = jobForm.find('.submit-link');
             var background = $('.job-form__background img').attr('src');
             if ($(window).width() < lgWidth) {
@@ -259,6 +270,17 @@
                     backgroundImage: 'url("' + background + '")'
                 })
             }
+            jobForm.on('click', '.can-delete', function (e) {
+                e.preventDefault();
+                $(this).val('');
+                $(this).siblings('.file__rezult').text('Add resume');
+                $(this).removeClass('can-delete');
+            })
+            jobFileInput.on('change', function () {
+                var file = $(this)[0].files[0];
+                $(this).siblings('.file__rezult').text(file.name);
+                $(this).addClass('can-delete');
+            })
             jobForm.on('submit', function (event) {
                 event.preventDefault();
                 var labels = $('.job-form__form form label');
@@ -298,7 +320,7 @@
             // })
 
             compasList.on('mouseenter', 'li', function () {
-                img.removeAttr('style');
+                // img.removeAttr('style');
                 var offset = img.offset();
                 var center_x = (offset.left) + (img.width() / 2);
                 var center_y = (offset.top) + (img.height() / 2);
@@ -314,7 +336,8 @@
                 var diff = Math.abs(degree - currentDegree) / 10;
                 var duration = (diff < 1) ? 2 * 2 : 2;
                 var amplitude = (diff < 1) ? 2 * diff : 2;
-                gsap.to(".compas__arrow", {
+                gsap.killTweensOf('.compas__arrow');
+                gsap.fromTo(".compas__arrow", {rotation: 0}, {
                     ease: 'elastic(' + amplitude + ',0.3)',
                     duration: duration,
                     rotation: degree

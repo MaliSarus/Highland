@@ -56,8 +56,9 @@
                                                     name="job-form-text"></textarea></label>
                                         <label for="job-form-resume" class="file no-required valid"><input type="file"
                                                                                                            id="job-form-resume"
-                                                                                                           name="job-form-resume">Add
-                                            Resume</label>
+                                                                                                           name="job-form-resume">
+                                            <span class="file__rezult">Add Resume</span>
+                                        </label>
                                     </div>
                                     <div class="form-row-custom">
                                         <button class="submit-link" type="submit">Send Request</button>

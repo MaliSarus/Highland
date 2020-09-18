@@ -9257,6 +9257,11 @@ header .container .row {
   background: #F3F4F7;
 }
 
+.text-5-7.quote-and-text .quote {
+  margin-bottom: 0;
+  padding-right: 0;
+}
+
 .text-5-7.quote-and-text .quote p {
   font-size: 22px;
   line-height: 34px;
@@ -9274,24 +9279,24 @@ header .container .row {
   margin-bottom: 30px;
 }
 
-.text-5-7__right .text :last-child {
+.text-5-7__right .text .list :last-child {
   margin-bottom: 0;
 }
 
-.text-5-7__right .text :first-child {
+.text-5-7__right .text .list :first-child {
   margin-top: 0;
 }
 
-.text-5-7__right .text p {
+.text-5-7__right .text .list > p {
   font-weight: 600;
   margin: 18px 0;
 }
 
-.text-5-7__right .text ul {
+.text-5-7__right .text .list ul {
   margin: 30px 0;
 }
 
-.text-5-7__right .text ul li {
+.text-5-7__right .text .list ul li {
   text-transform: uppercase;
 }
 
@@ -9326,7 +9331,7 @@ header .container .row {
 
 .compas-list {
   overflow: hidden;
-  padding: 40px 0;
+  padding: 45px 0;
   position: relative;
 }
 
@@ -9340,6 +9345,7 @@ header .container .row {
 
 .compas-list__compas .compas__image {
   position: relative;
+  top: -15px;
 }
 
 .compas-list__compas .compas__image > img {
@@ -9372,6 +9378,10 @@ header .container .row {
 .compas-list__text .text p {
   font-weight: 600;
   margin-bottom: 20px;
+}
+
+.compas-list__text .text ul :last-child {
+  margin-bottom: 0;
 }
 
 .compas-list__text .text ul li {
@@ -9436,7 +9446,7 @@ header .container .row {
 
 .title-content-image-text__image {
   height: 440px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .title-content-image-text__image .image {
@@ -9512,6 +9522,11 @@ header .container .row {
   -moz-column-gap: unset;
   column-gap: unset;
   height: auto;
+  margin-top: 30px;
+}
+
+.title-content-image-text__text .text.running-title p {
+  margin: 0;
 }
 
 .title-content-image-text__text .text h4 {
@@ -9527,7 +9542,7 @@ header .container .row {
 }
 
 .title-content-image-text__text .text :first-child {
-  margin-top: 6px;
+  margin-top: 0;
 }
 
 .test {
@@ -11916,7 +11931,7 @@ header .container .row {
   }
 
   .text-5-7.quote-and-text .quote {
-    max-width: 400px;
+    max-width: 441px;
   }
 
   .text-5-7.quote-and-text .quote p {
@@ -11940,16 +11955,20 @@ header .container .row {
     padding-right: 100px;
   }
 
-  .text-5-7__right .text ul {
+  .text-5-7__right .text .list > p {
+    max-width: 424px;
+  }
+
+  .text-5-7__right .text .list ul {
     margin: 18px 0;
   }
 
-  .text-5-7__right .text ul li {
+  .text-5-7__right .text .list ul li {
     font-size: 22px;
     line-height: 46px;
   }
 
-  .text-5-7__right .text ul li::before {
+  .text-5-7__right .text .list ul li::before {
     top: calc(46px / 2 - 2.5px);
   }
 
@@ -11967,7 +11986,7 @@ header .container .row {
   }
 
   .compas-list {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .compas-list__compas {
@@ -12006,6 +12025,7 @@ header .container .row {
 
   .title-content-image-text__image {
     height: 678px;
+    margin-bottom: 40px;
   }
 
   .title-content-image-text__image .image .article {
@@ -12051,6 +12071,10 @@ header .container .row {
     overflow: hidden;
   }
 
+  .title-content-image-text__text .text.running-title {
+    margin-top: 50px;
+  }
+
   .title-content-image-text__text .text h4 {
     font-size: 16px;
     line-height: 22px;
@@ -12058,6 +12082,10 @@ header .container .row {
 
   .title-content-image-text__text .text p {
     line-height: 23px;
+  }
+
+  .title-content-image-text__text .text :first-child {
+    margin-top: 6px;
   }
 
   .footer {
@@ -12967,7 +12995,7 @@ header .container .row {
   }
 
   .compas-list__compas {
-    padding: 60px 0;
+    padding: 70px 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -12977,8 +13005,12 @@ header .container .row {
 
   .compas-list__compas .compas {
     position: relative;
-    width: 618px;
     height: 100%;
+  }
+
+  .compas-list__compas .compas__image {
+    top: unset;
+    bottom: -35px;
   }
 
   .compas-list__compas .compas__image > img {

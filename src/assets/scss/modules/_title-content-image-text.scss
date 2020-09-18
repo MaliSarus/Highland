@@ -23,9 +23,10 @@
   }
   &__image{
     height: 440px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     @media screen and (min-width: $md-width){
       height: 678px;
+      margin-bottom: 40px;
     }
     .image{
       position: relative;
@@ -109,6 +110,13 @@
         column-width: unset;
         column-gap: unset;
         height: auto;
+        margin-top: 30px;
+        @media screen and (min-width: $md-width){
+          margin-top: 50px;
+        }
+        p{
+          margin: 0;
+        }
       }
       h4{
         margin: 29px 0 18px;
@@ -128,7 +136,10 @@
         }
       }
       & :first-child{
-        margin-top: 6px;
+        margin-top: 0;
+        @media screen and (min-width: $md-width){
+          margin-top: 6px;
+        }
       }
     }
   }
