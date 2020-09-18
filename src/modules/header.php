@@ -31,8 +31,8 @@
             <div class="col-md-9 d-flex justify-content-end">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="#">Our Firm</a></li>
-                        <li><a href="#">What we Do</a></li>
+                        <li class="active"><a href="about-us.php">Our Firm</a></li>
+                        <li><a href="what-we-do.php">What we Do</a></li>
                         <li><a href="#">Careers</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
