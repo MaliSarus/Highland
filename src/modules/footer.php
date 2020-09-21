@@ -19,7 +19,7 @@
             <div class="col-12 col-md-4">
                 <div class="footer__left">
                     <div class="footer__logo">
-                        <img src="./assets/img/interface/logo.svg" alt="">
+                        <a href="index.php"><img src="./assets/img/interface/logo.svg" alt=""></a>
                     </div>
                     <div class="footer__address">
                         <ul>

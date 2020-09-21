@@ -73,5 +73,24 @@
     @media screen and (min-width: $md-width){
       min-height: 374px + 177px;
     }
+    .text{
+      .list{
+        ul{
+          li{
+            font-weight: normal;
+            @media screen and (min-width: $md-width) {
+              line-height: 32px;
+              margin-bottom: 40px;
+              &::before{
+                top: calc(32px / 2 - 2.5px)
+              }
+            }
+          }
+          & :last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
   }
 }

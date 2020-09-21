@@ -39,7 +39,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a href="#1" class="lm-link">Learn More</a>
+                            <a href="about-us.php" class="lm-link">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -48,11 +48,11 @@
                         <div class="col-12 col-md-6 col-xl-8">
                             <div class="text">
                                 <ul>
-                                    <li>2 Strategic advisory</li>
-                                    <li>2 Capital raise and strategy</li>
-                                    <li>2 Outsourced corporate development</li>
-                                    <li>2 Buy-side advisory</li>
-                                    <li>2 Sell-side advisory</li>
+                                    <li>Objective & Transparent Diligence</li>
+                                    <li>Well-Informed & Thoughtful Guidance</li>
+                                    <li>Quality Packaged Deals & Deliverables</li>
+                                    <li>Appropriate Introductions</li>
+                                    <li>Insightful & Disciplined Negotiations</li>
                                 </ul>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <a href="#2" class="lm-link">Learn More</a>
+                            <a href="what-we-do.php" class="lm-link">Learn More</a>
                         </div>
                     </div>
                 </div>

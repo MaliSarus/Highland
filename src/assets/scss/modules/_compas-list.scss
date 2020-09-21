@@ -34,19 +34,13 @@
       }
       &__image{
         position: relative;
-        top: -15px;
         @media screen and (min-width: $lg-width){
-          top: unset;
-          bottom: -35px;
+          bottom: -80px;
+          max-width: 618px;
           //bottom: -10%;
         }
         > img{
           width: 100%;
-          @media screen and (min-width: $lg-width){
-            width: 110%;
-            position: relative;
-            left: -10%;
-          }
         }
       }
       &__arrow{
@@ -57,7 +51,7 @@
         transform: translate(-50%,  -50%);
         width: 100%;
         @media screen and (min-width: $lg-width){
-          left: calc(50% - 24px);
+          left: 50%;
           width: 660px;
 
         }
@@ -102,15 +96,17 @@
               top: calc(60px / 2 - 2.5px);
             }
           }
+          &:hover{
+            span {
+              &::before {
+                transform: translateY(0);
+              }
+            }
+          }
           span{
             position: relative;
             overflow: hidden;
             display: inline-block;
-            &:hover{
-              &::before{
-                transform: translateY(0);
-              }
-            }
             &::before{
               position: absolute;
               display: block;

@@ -23,8 +23,8 @@
 
         inputs.on('input change', function () {
             var submitButton = $(this).parents('form').find('.submit-link');
-            if (submitButton.hasClass('error') || submitButton.hasClass('success')){
-                submitButton.removeClass(['error','success']);
+            if (submitButton.hasClass('error') || submitButton.hasClass('success')) {
+                submitButton.removeClass(['error', 'success']);
             }
         })
 
@@ -208,7 +208,7 @@
                 var index = tabsEl.index($(this));
                 tabsEl.removeClass('active');
                 $(this).addClass('active');
-                tabsPage.fadeOut(function () {
+                $('.tabs__page.active').fadeOut(function () {
                     $(this).removeClass('active');
                     $(tabsPage[index]).addClass('active').fadeIn();
                 })
@@ -311,15 +311,50 @@
         if (isSet($('.compas-list'))) {
             var img = $('.compas__arrow');
             var compasList = $('.compas-list__text ul');
+            var compasInterval = null;
+            var compasStartInterval = null;
 
-            gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
+            // gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
 
-            // compasList.on('mouseleave', function () {
-            //     console.log('mouseout');
-            //     gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-            // })
+            if (!compasStartInterval) {
+                gsap.killTweensOf('.compas__arrow');
+                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
+                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
+                gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
+            }
+
+            compasStartInterval = setInterval(function () {
+                gsap.killTweensOf('.compas__arrow');
+                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
+                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
+                gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
+            }, 4000);
+
+            compasList.on('mouseleave', function () {
+                clearInterval(compasStartInterval);
+                compasStartInterval = null;
+                if (!compasInterval) {
+                    console.log('start')
+                    gsap.killTweensOf('.compas__arrow');
+                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
+                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
+                    gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
+                }
+
+                compasInterval = setInterval(function () {
+                    gsap.killTweensOf('.compas__arrow');
+                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
+                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
+                    gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
+                }, 4000)
+
+            })
 
             compasList.on('mouseenter', 'li', function () {
+                clearInterval(compasStartInterval);
+                clearInterval(compasInterval);
+                compasStartInterval = null;
+                compasInterval = null;
                 img.removeAttr('style');
                 var offset = img.offset();
                 var center_x = (offset.left) + (img.width() / 2);

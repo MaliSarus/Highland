@@ -24,7 +24,7 @@
                         <h2>Values</h2>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
+                <div class="col-7 col-lg-6">
                     <div class="compas-list__text">
                         <div class="text">
                             <p>The values core to our firm:</p>

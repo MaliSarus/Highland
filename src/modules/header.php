@@ -20,7 +20,9 @@
         <div class="row">
             <div class="col-md-3 d-flex align-items-center justify-content-between">
                 <div class="header__logo">
-                    <img src="./assets/img/interface/logo.svg" alt="">
+                    <a href="index.php">
+                        <img src="./assets/img/interface/logo.svg" alt="">
+                    </a>
                 </div>
                 <button class="hamburger hamburger--collapse" type="button">
                   <span class="hamburger-box">

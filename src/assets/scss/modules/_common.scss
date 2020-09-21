@@ -83,7 +83,7 @@ ol{
     display: flex;
     padding-left: 0;
     &::before{
-      top: 7px;
+      top: 14px;
       position: relative;
       display: block;
       counter-increment: myCounter;
@@ -99,9 +99,9 @@ ol{
 ul{
   li{
     padding-left: 20px;
-    @media screen and (min-width: $md-width){
-      padding-left: 25px;
-    }
+    //@media screen and (min-width: $md-width){
+    //  padding-left: 25px;
+    //}
     &::before {
       content: '';
       display: block;
