@@ -1,8 +1,9 @@
 <section class="text-on-pic last-dark-block">
     <div class="text-on-pic__background">
-        <video autoplay muted loop>
-            <source src="./assets/videos/cover.mp4" type="video/mp4">
-        </video>
+        <img src="./assets/img/text-on-pic/1.png" alt="">
+<!--        <video autoplay muted loop>-->
+<!--            <source src="./assets/videos/cover.mp4" type="video/mp4">-->
+<!--        </video>-->
     </div>
     <div class="container">
         <div class="row">

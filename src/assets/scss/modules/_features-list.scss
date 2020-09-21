@@ -35,8 +35,12 @@
           padding: (40px / 2) 15px;
           flex-basis: 100%;
           margin: 0;
+          &::before{
+              top: 9px;
+          }
           @media screen and (min-width: $md-width) {
             flex-basis: 50%;
+            line-height: 30px;
           }
           @media screen and (min-width: $lg-width) {
             flex-basis: calc(100% / 3);

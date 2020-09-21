@@ -69,6 +69,12 @@
       }
     }
   }
+  &__title{
+    margin-bottom: 30px;
+    @media screen and (min-width: $md-width){
+      margin-bottom: 0;
+    }
+  }
   &__text{
     @media screen and (min-width: $lg-width){
       padding: (97px - 60px) 70px (97px - 60px) 100px;
@@ -89,7 +95,7 @@
         li{
           font-size: 18px;
           line-height: 23px;
-          margin-bottom: 21px;
+          margin-bottom: 27px;
           &::before{
             top: calc(23px / 2 - 2.5px);
           }

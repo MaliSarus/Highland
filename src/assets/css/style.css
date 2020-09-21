@@ -7828,6 +7828,7 @@ p,
 ul,
 ol {
   margin: 0;
+  color: #1B1919;
 }
 
 ul,
@@ -7837,7 +7838,6 @@ ol {
 }
 
 h2 {
-  color: #1B1919;
   font-size: 20px;
   line-height: 27px;
   font-weight: bold;
@@ -7845,7 +7845,6 @@ h2 {
 
 p {
   font-size: 14px;
-  color: #1B1919;
   line-height: 26px;
 }
 
@@ -8406,7 +8405,7 @@ header .container .row {
 }
 
 .header__logo {
-  width: 175px;
+  width: 128px;
   position: relative;
   z-index: 10;
 }
@@ -9458,6 +9457,10 @@ header .container .row {
   filter: drop-shadow(12px 10px 30px rgba(0, 33, 86, 0.62));
 }
 
+.compas-list__title {
+  margin-bottom: 30px;
+}
+
 .compas-list__text .text p {
   font-weight: 600;
   margin-bottom: 20px;
@@ -9470,7 +9473,7 @@ header .container .row {
 .compas-list__text .text ul li {
   font-size: 18px;
   line-height: 23px;
-  margin-bottom: 21px;
+  margin-bottom: 27px;
 }
 
 .compas-list__text .text ul li::before {
@@ -9689,6 +9692,10 @@ header .container .row {
   margin: 0;
 }
 
+.features-list__block .list ol li::before {
+  top: 9px;
+}
+
 .accent-text {
   position: relative;
   background-position: center;
@@ -9844,7 +9851,7 @@ header .container .row {
 }
 
 .text-on-pic__background video,
-.text-on-pic__background image {
+.text-on-pic__background img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -9879,7 +9886,7 @@ header .container .row {
   font-size: 16px;
   line-height: 30px;
   font-weight: normal;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .text-on-pic__text .text .list ul li::before {
@@ -9926,7 +9933,7 @@ header .container .row {
 }
 
 .footer__logo {
-  max-width: 175px;
+  max-width: 128px;
 }
 
 .footer__logo a {
@@ -9950,6 +9957,7 @@ header .container .row {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin: 0 -5px;
+  color: white;
 }
 
 .footer__address ul li {
@@ -12363,6 +12371,10 @@ header .container .row {
     width: 100%;
   }
 
+  .compas-list__title {
+    margin-bottom: 0;
+  }
+
   .compas-list__text .text p {
     font-size: 18px;
     margin-bottom: 30px;
@@ -12484,6 +12496,7 @@ header .container .row {
   .features-list__block .list ol li {
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
+    line-height: 30px;
   }
 
   .accent-text__title {
@@ -12593,6 +12606,10 @@ header .container .row {
 
   .footer__left {
     margin-bottom: 0;
+  }
+
+  .footer__logo {
+    max-width: 175px;
   }
 }
 
