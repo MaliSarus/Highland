@@ -19,6 +19,11 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="pic-and-text-with-title__text">
+                    <div class="pic-and-text-with-title__title pic-and-text-with-title__title_mobile">
+                        <div class="text">
+                            <h2>Our Commitment</h2>
+                        </div>
+                    </div>
                     <div class="text">
                         <div class="list">
                             <p>We are committed to helping our clients achieve their goals through:</p>

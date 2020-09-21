@@ -82,8 +82,11 @@ ol{
   li{
     display: flex;
     padding-left: 0;
+    line-height: 28px;
+    @media screen and (min-width: $md-width) {
+      line-height: 40px;
+    }
     &::before{
-      top: 14px;
       position: relative;
       display: block;
       counter-increment: myCounter;
@@ -92,6 +95,10 @@ ol{
       line-height: 100%;
       text-transform: uppercase;
       margin-right: 17px;
+      top: 7px;
+      @media screen and (min-width: $md-width){
+        top: 14px;
+      }
     }
   }
 }

@@ -1,17 +1,25 @@
 .pic-and-text-with-title{
-  padding: 40px 0;
+  padding: 40px 0 50px;
   @media screen and (min-width: $md-width){
     padding: 80px 0;
   }
 
   &__title{
-    margin-bottom: 20px;
+    display: none;
     @media screen and (min-width: $md-width){
+      display: block;
       margin-bottom: 47px;
+    }
+    &_mobile{
+      display: block;
+      margin-bottom: 30px;
+      @media screen and (min-width: $md-width){
+        display: none;
+      }
     }
   }
   &__image{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     @media screen and (min-width: $md-width){
       margin-bottom: 0;
     }
@@ -28,10 +36,7 @@
   &__text{
     .list{
       ul{
-        margin-top: 20px;
-        @media screen and (min-width: $md-width){
-          margin-top: 40px;
-        }
+        margin-top: 40px;
       }
     }
   }

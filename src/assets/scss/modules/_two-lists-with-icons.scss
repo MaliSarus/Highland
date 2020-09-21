@@ -9,6 +9,8 @@
       display: flex;
       align-items: center;
       margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 26px;
       span{
         width: 50px;
         height: 50px;
@@ -29,12 +31,40 @@
       @media screen and (min-width: $lg-width){
         padding-left: 40px;
       }
+      li{
+        font-size: 14px;
+        line-height: 30px;
+        margin-bottom: 5px;
+        @media screen and (min-width: $md-width){
+          font-size: 20px;
+          line-height: 40px;
+        }
+      }
     }
+    ol{
+      li{
+        &::before{
+          top: 10px;
+          @media screen and (min-width: $md-width){
+            top: 17px;
+          }
+        }
+      }
+    }
+    ul{
+      li{
+        &::before{
+          top: calc(30px / 2 - 2.5px);
+          @media screen and (min-width: $md-width){
+            top: calc(40px / 2 - 2.5px);
+          }
+        }
+      }
+    }
+
   }
   &__left{
-    padding-bottom: 20px;
-    border-bottom: 3px solid $accent-color;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     @media screen and (min-width: $md-width){
       padding-bottom: 0;
       border-bottom: none;
