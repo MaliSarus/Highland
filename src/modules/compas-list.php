@@ -1,7 +1,7 @@
 <section class="compas-list">
     <div class="compas-list__compas">
-        <div class="container">
-            <div class="row">
+        <div class="container h-100">
+            <div class="row h-100">
                 <div class="col-12 col-lg-7 p-0 pr-sm-3 pl-sm-3">
                     <div class="compas">
                         <div class="compas__image">

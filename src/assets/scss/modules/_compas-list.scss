@@ -1,25 +1,22 @@
 .compas-list{
   overflow: hidden;
-  padding: 45px 0;
+  padding: 40px 0;
   position: relative;
   @media screen and (min-width: $md-width){
-    padding: 70px 0;
+    padding: 60px 0;
   }
   &__compas{
-
     position: absolute;
     right: -60px;
     top: 20px;
     width: 245px;
     height: 245px;
-    //padding: 40px 0;
     @media screen and (min-width: $md-width){
       width: 300px;
       height: 300px;
       right: 0;
     }
     @media screen and (min-width: $lg-width){
-      padding: 70px 0;
       position: absolute;
       left: 0;
       top: 0;
@@ -35,12 +32,17 @@
       &__image{
         position: relative;
         @media screen and (min-width: $lg-width){
-          bottom: -80px;
+          bottom: -60px;
           max-width: 618px;
           //bottom: -10%;
         }
         > img{
           width: 100%;
+          transform: rotate(-28deg);
+          transition: transform .5s;
+          @media screen and (min-width: $lg-width){
+            transform: none;
+          }
         }
       }
       &__arrow{
@@ -49,7 +51,10 @@
         top: 50%;
         transform-origin: center;
         transform: translate(-50%,  -50%);
-        width: 100%;
+        width: 210px;
+        @media screen and (min-width: $md-width) {
+          width: 100%;
+        }
         @media screen and (min-width: $lg-width){
           left: 50%;
           width: 660px;
@@ -66,7 +71,7 @@
   }
   &__text{
     @media screen and (min-width: $lg-width){
-      padding: (97px - 60px) 70px (97px - 60px) 73px;
+      padding: (97px - 60px) 70px (97px - 60px) 100px;
     }
     .text{
       p{
@@ -90,10 +95,10 @@
           }
           @media screen and (min-width: $md-width){
             font-size: 30px;
-            line-height: 60px;
+            line-height: 50px;
             margin-bottom: 0;
             &::before{
-              top: calc(60px / 2 - 2.5px);
+              top: calc(50px / 2 - 2.5px);
             }
           }
           &:hover{

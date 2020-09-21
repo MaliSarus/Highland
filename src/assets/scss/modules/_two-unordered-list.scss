@@ -11,14 +11,18 @@
     p{
       span{
         display: inline-block;
-        padding-bottom: 10px;
+        padding-bottom: 3px;
         border-bottom: 3px solid $accent-color;
+        @media screen and (min-width: $md-width){
+          padding-bottom: 6px;
+
+        }
       }
     }
     ul{
       margin-top: 20px;
       @media screen and (min-width: $md-width){
-        margin-top: 30px;
+        margin-top: 35px;
       }
     }
   }

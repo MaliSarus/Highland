@@ -85,9 +85,15 @@
         }
         ul{
           li{
+            font-size: 16px;
+            line-height: 30px;
             font-weight: normal;
             margin-bottom: 40px;
+            &::before{
+              top: calc(30px / 2 - 2.5px)
+            }
             @media screen and (min-width: $md-width) {
+              font-size: 20px;
               line-height: 32px;
               &::before{
                 top: calc(32px / 2 - 2.5px)

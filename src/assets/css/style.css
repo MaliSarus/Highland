@@ -9379,7 +9379,6 @@ header .container .row {
 
 .title-text-image {
   padding-top: 40px;
-  padding-bottom: 0;
 }
 
 .title-text-image__title {
@@ -9408,7 +9407,7 @@ header .container .row {
 
 .compas-list {
   overflow: hidden;
-  padding: 45px 0;
+  padding: 40px 0;
   position: relative;
 }
 
@@ -9426,6 +9425,14 @@ header .container .row {
 
 .compas-list__compas .compas__image > img {
   width: 100%;
+  -webkit-transform: rotate(-28deg);
+  -ms-transform: rotate(-28deg);
+  transform: rotate(-28deg);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  -o-transition: transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 
 .compas-list__compas .compas__arrow {
@@ -9438,7 +9445,7 @@ header .container .row {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 100%;
+  width: 210px;
 }
 
 .compas-list__compas .compas__arrow img {
@@ -9633,7 +9640,7 @@ header .container .row {
 
 .two-unordered-lists .list p span {
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
   border-bottom: 3px solid #015FFF;
 }
 
@@ -9662,7 +9669,7 @@ header .container .row {
 
 .features-list__block .list p span {
   display: inline-block;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
   border-bottom: 3px solid #015FFF;
 }
 
@@ -9672,11 +9679,11 @@ header .container .row {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin: -22.5px -15px;
+  margin: -20px -15px;
 }
 
 .features-list__block .list ol li {
-  padding: 22.5px 15px;
+  padding: 20px 15px;
   -ms-flex-preferred-size: 100%;
   flex-basis: 100%;
   margin: 0;
@@ -9691,7 +9698,6 @@ header .container .row {
 }
 
 .accent-text::before {
-  content: '';
   display: block;
   position: absolute;
   left: 0;
@@ -9747,7 +9753,7 @@ header .container .row {
 
 .two-lists-with-icons .list ul,
 .two-lists-with-icons .list ol {
-  padding-left: 15px;
+  padding-left: 0;
 }
 
 .two-lists-with-icons .list ul li,
@@ -9791,7 +9797,7 @@ header .container .row {
 }
 
 .pic-and-text-with-title__text .list ul {
-  margin-top: 40px;
+  margin-top: 35px;
 }
 
 .text-on-pic {
@@ -9870,8 +9876,14 @@ header .container .row {
 }
 
 .text-on-pic__text .text .list ul li {
+  font-size: 16px;
+  line-height: 30px;
   font-weight: normal;
   margin-bottom: 40px;
+}
+
+.text-on-pic__text .text .list ul li::before {
+  top: calc(30px / 2 - 2.5px);
 }
 
 .text-on-pic__text .text .list ul :last-child {
@@ -12338,13 +12350,17 @@ header .container .row {
   }
 
   .compas-list {
-    padding: 70px 0;
+    padding: 60px 0;
   }
 
   .compas-list__compas {
     width: 300px;
     height: 300px;
     right: 0;
+  }
+
+  .compas-list__compas .compas__arrow {
+    width: 100%;
   }
 
   .compas-list__text .text p {
@@ -12354,12 +12370,12 @@ header .container .row {
 
   .compas-list__text .text ul li {
     font-size: 30px;
-    line-height: 60px;
+    line-height: 50px;
     margin-bottom: 0;
   }
 
   .compas-list__text .text ul li::before {
-    top: calc(60px / 2 - 2.5px);
+    top: calc(50px / 2 - 2.5px);
   }
 
   .title-content-image-text {
@@ -12444,8 +12460,12 @@ header .container .row {
     padding-bottom: 65px;
   }
 
+  .two-unordered-lists .list p span {
+    padding-bottom: 6px;
+  }
+
   .two-unordered-lists .list ul {
-    margin-top: 30px;
+    margin-top: 35px;
   }
 
   .two-unordered-lists__left {
@@ -12455,6 +12475,10 @@ header .container .row {
   .features-list {
     padding-top: 85px;
     padding-bottom: 80px;
+  }
+
+  .features-list__block .list p span {
+    padding-bottom: 6px;
   }
 
   .features-list__block .list ol li {
@@ -12522,6 +12546,10 @@ header .container .row {
     height: 331px;
   }
 
+  .pic-and-text-with-title__text .list ul li {
+    margin-bottom: 0;
+  }
+
   .text-on-pic {
     padding-top: 70px;
     padding-bottom: 65px;
@@ -12551,6 +12579,7 @@ header .container .row {
   }
 
   .text-on-pic__text .text .list ul li {
+    font-size: 20px;
     line-height: 32px;
   }
 
@@ -13465,7 +13494,6 @@ header .container .row {
   }
 
   .compas-list__compas {
-    padding: 70px 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -13479,8 +13507,14 @@ header .container .row {
   }
 
   .compas-list__compas .compas__image {
-    bottom: -80px;
+    bottom: -60px;
     max-width: 618px;
+  }
+
+  .compas-list__compas .compas__image > img {
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
   }
 
   .compas-list__compas .compas__arrow {
@@ -13489,23 +13523,23 @@ header .container .row {
   }
 
   .compas-list__text {
-    padding: 37px 70px 37px 73px;
+    padding: 37px 70px 37px 100px;
   }
 
   .features-list__block .list p {
-    margin-bottom: 60px;
+    margin-bottom: 55px;
   }
 
   .features-list__block .list ol {
     -ms-flex-preferred-size: calc(100% / 3);
     flex-basis: calc(100% / 3);
-    margin: -42.5px -15px;
+    margin: -35px -15px;
   }
 
   .features-list__block .list ol li {
     -ms-flex-preferred-size: calc(100% / 3);
     flex-basis: calc(100% / 3);
-    padding: 42.5px 15px;
+    padding: 35px 15px;
   }
 
   .accent-text {

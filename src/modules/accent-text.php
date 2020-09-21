@@ -1,4 +1,4 @@
-<section class="accent-text" style="background-image: url('./assets/img/accent-text/1.jpg')">
+<section class="accent-text" style="background-image: url('./assets/img/accent-text/1.png')">
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-4 col-lg-3">
