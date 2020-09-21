@@ -32,7 +32,7 @@
                                      alt="">
                                 <img data-src="https://klike.net/uploads/posts/2019-05/1556777145_1.jpg" alt="">
                                 <img data-src="https://vjoy.cc/wp-content/uploads/2019/10/2-7.jpg" alt="">
-                                <img data-src="https://shutniki.club/wp-content/uploads/2019/12/mem_dimon_1_05111802-600x400.jpg"
+                                <img data-src="https://storage.finance.kz/images/2020/08/08/cf0ec717e4ff52266800455ca274970b.jpg"
                                      alt="">
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                      alt="">
                                 <img data-src="https://klike.net/uploads/posts/2019-05/1556777145_1.jpg" alt="">
                                 <img data-src="https://vjoy.cc/wp-content/uploads/2019/10/2-7.jpg" alt="">
-                                <img data-src="https://shutniki.club/wp-content/uploads/2019/12/mem_dimon_1_05111802-600x400.jpg"
+                                <img data-src="https://storage.finance.kz/images/2020/08/08/cf0ec717e4ff52266800455ca274970b.jpg"
                                      alt="">
                             </div>
                         </div>
