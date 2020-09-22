@@ -11998,6 +11998,7 @@ header .container .row {
   .quote p {
     padding-top: 0;
     padding-left: 41px;
+    line-height: 36px;
     font-size: 26px;
   }
 
@@ -13536,11 +13537,11 @@ header .container .row {
 
   .compas-list__compas .compas__arrow {
     left: 50%;
-    width: 660px;
+    width: 555px;
   }
 
   .compas-list__text {
-    padding: 37px 70px 37px 100px;
+    padding: 37px 0 37px 100px;
   }
 
   .features-list__block .list p {
