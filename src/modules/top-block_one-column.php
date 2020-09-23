@@ -4,9 +4,9 @@
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="text">
-                        <h2>About us</h2>
-                        <p>Founded by experienced operators and industry experts, HCA elevates exceptional high-growth
-                            companies by assisting clients in transforming their vision into value.</p>
+                        <h1>About us</h1>
+                        Founded by experienced operators and industry experts, HCA elevates exceptional high-growth
+                            companies by assisting clients in transforming their vision into value.
                     </div>
                 </div>
             </div>

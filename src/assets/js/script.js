@@ -6,6 +6,7 @@
     var xlWidth = 1200;
     var mailPattern = /^[\.a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
     var numPattern = /^[+][0-9]+$/i;
+    var scrollOrigin = null;
 
 
     function isSet(element) {
@@ -13,7 +14,10 @@
     }
 
     function uiDefaultSet() {
-        if (isSet($('.top-block'))) {
+        if(!(isSet($('.top-slider'))) && !(isSet($('.top-block')))){
+            $('body').addClass('no-top')
+        }
+        if (!(isSet($('.top-slider')))) {
             $('header').addClass('dark')
         }
         var mailInput = $('[type="email"]');
@@ -381,6 +385,9 @@
 
 
         }
+        if (isSet($('.accent-text'))){
+            $(window).scroll(parallaxScrolling);
+        }
 
 
     })
@@ -400,6 +407,22 @@
             }
         }
     })
+
+
+    function parallaxScrolling() {
+        var scrolled = $(window).scrollTop();
+        if(($(window).scrollTop() + $(window).height()) >= ($('.accent-text').offset().top + $('.accent-text').height()))
+        {
+            if(!scrollOrigin){
+                scrollOrigin = $(window).scrollTop();
+            }
+
+            $('.accent-text').css('background-position', '50% ' + (0 - ((scrolled - scrollOrigin) * .1)) + 'px');
+        }
+        else {
+            scrollOrigin = null;
+        }
+    }
 
     $(window).on('scroll', function () {
         headerColoring();

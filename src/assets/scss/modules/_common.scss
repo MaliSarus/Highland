@@ -20,19 +20,26 @@ body {
   &.hidden{
     overflow: hidden;
   }
+  &.no-top{
+    padding-top: 58.25px;
+    @media screen and (min-width: $md-width) {
+      padding-top: 92px;
+    }
+  }
 }
 
 main{
   flex-grow: 1;
 }
 
-* {
-  font-family: 'Open Sans', sans-serif !important;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+header, main, footer {
+  * {
+    font-family: 'Open Sans', sans-serif !important;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
-
 h1,h2,h3,h4,h5,h6,p,ul,ol{
   margin: 0;
   color: $color;
