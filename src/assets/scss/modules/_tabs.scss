@@ -99,6 +99,9 @@
     }
 
     ul {
+      @media screen and (min-width: $xl-width){
+        padding: 15px 0;
+      }
       li {
         //@media screen and (min-width: $md-width){
         //  font-size: 30px;
@@ -118,6 +121,10 @@
             top: calc(55px / 2 - 2.5px);
           }
         }
+      }
+
+      & :last-child{
+        margin-bottom: 0;
       }
     }
 

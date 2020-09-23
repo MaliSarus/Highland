@@ -214,22 +214,22 @@
                 })
             });
             var animationFlag = 0;
-            pageList.on('mouseenter', 'li', function () {
-                var pageListEl = $('.tabs__page.active ul > li');
-                var index = pageListEl.index($(this));
-                var imageEl = $('.tabs__page.active .image > img');
-                var activeImageEl = $('.tabs__page.active .image > img.active');
-                var activeImageIndex = imageEl.index(activeImageEl);
-
-                if (index != activeImageIndex) {
-                    animationFlag = 1;
-                    activeImageEl.fadeOut(function () {
-                        $(this).attr('data-src', $(this).attr('src')).removeAttr('src').removeClass('active');
-                        $(imageEl[index]).attr("src", $(imageEl[index]).attr('data-src')).removeAttr('data-src').stop(true, true).hide().fadeIn().addClass('active');
-                        animationFlag = 0;
-                    })
-                }
-            })
+            // pageList.on('mouseenter', 'li', function () {
+            //     var pageListEl = $('.tabs__page.active ul > li');
+            //     var index = pageListEl.index($(this));
+            //     var imageEl = $('.tabs__page.active .image > img');
+            //     var activeImageEl = $('.tabs__page.active .image > img.active');
+            //     var activeImageIndex = imageEl.index(activeImageEl);
+            //
+            //     if (index != activeImageIndex) {
+            //         animationFlag = 1;
+            //         activeImageEl.fadeOut(function () {
+            //             $(this).attr('data-src', $(this).attr('src')).removeAttr('src').removeClass('active');
+            //             $(imageEl[index]).attr("src", $(imageEl[index]).attr('data-src')).removeAttr('data-src').stop(true, true).hide().fadeIn().addClass('active');
+            //             animationFlag = 0;
+            //         })
+            //     }
+            // })
         }
 
         if (isSet($('.contact-form'))) {

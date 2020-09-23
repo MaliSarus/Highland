@@ -16,13 +16,15 @@
                     <div class="row align-items-center">
                         <div class="col-12 col-md-6 col-xl-8">
                             <div class="text">
-                                <ul>
-                                    <li>Strategic advisory</li>
-                                    <li>Capital raise and strategy</li>
-                                    <li>Outsourced corporate development</li>
-                                    <li>Buy-side advisory</li>
-                                    <li>Sell-side advisory</li>
-                                </ul>
+                                <div class="list">
+                                    <ul>
+                                        <li>Strategic advisory</li>
+                                        <li>Capital raise and strategy</li>
+                                        <li>Outsourced corporate development</li>
+                                        <li>Buy-side advisory</li>
+                                        <li>Sell-side advisory</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-xl-4">
@@ -47,13 +49,15 @@
                     <div class="row align-items-center">
                         <div class="col-12 col-md-6 col-xl-8">
                             <div class="text">
-                                <ul>
-                                    <li>Objective & Transparent Diligence</li>
-                                    <li>Well-Informed & Thoughtful Guidance</li>
-                                    <li>Quality Packaged Deals & Deliverables</li>
-                                    <li>Appropriate Introductions</li>
-                                    <li>Insightful & Disciplined Negotiations</li>
-                                </ul>
+                               <div class="list">
+                                   <ul>
+                                       <li>Objective & Transparent Diligence</li>
+                                       <li>Well-Informed & Thoughtful Guidance</li>
+                                       <li>Quality Packaged Deals & Deliverables</li>
+                                       <li>Appropriate Introductions</li>
+                                       <li>Insightful & Disciplined Negotiations</li>
+                                   </ul>
+                               </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-xl-4">

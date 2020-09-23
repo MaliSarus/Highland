@@ -3,7 +3,7 @@
         <div class="container-fluid h-100">
             <div class="row h-100">
                 <div class="col-lg-12 p-0 h-100">
-                    <div class="image image_with-cover">
+                    <div class="image">
                         <img src="./assets/img/job-form/1.png" alt="">
                     </div>
                 </div>

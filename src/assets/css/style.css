@@ -7945,13 +7945,8 @@ label.file::before {
   transition: transform .25s, -webkit-transform .25s;
 }
 
-label.valid {
-  color: #10ce6f;
-}
-
 label.valid input {
   color: #10ce6f;
-  border-color: #10ce6f;
 }
 
 label.valid.no-required {
@@ -7970,13 +7965,8 @@ label.valid.no-required input:focus {
   border-color: #015FFF;
 }
 
-label.invalid {
-  color: #e92731;
-}
-
 label.invalid input {
   color: #e92731;
-  border-color: #e92731;
 }
 
 input,
@@ -8428,21 +8418,21 @@ header .container .row {
   width: 100%;
   height: 100vh;
   padding: 100px;
-  -webkit-transform: translateY(100%);
-  -ms-transform: translateY(100%);
-  transform: translateY(100%);
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  -o-transition: transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  -o-transition: transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
   background-color: #015fff;
 }
 
 .header__menu.open {
-  -webkit-transform: translateY(0);
-  -ms-transform: translateY(0);
-  transform: translateY(0);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 
 .header__menu ul {
@@ -8918,6 +8908,10 @@ header .container .row {
   margin-bottom: 40px;
 }
 
+.tabs__page ul :last-child {
+  margin-bottom: 0;
+}
+
 .tabs__page .image {
   position: relative;
   height: 400px;
@@ -9214,7 +9208,7 @@ header .container .row {
 }
 
 .job-form__container::before {
-  content: '';
+  content: none;
   display: block;
   position: absolute;
   left: 0;
@@ -9247,16 +9241,22 @@ header .container .row {
   padding-top: 30px;
   padding-bottom: 20px;
   min-height: 375px;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .job-form__header {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .job-form__text {
   max-width: 351px;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .job-form__text p {
@@ -9297,26 +9297,16 @@ header .container .row {
   color: black;
 }
 
-.job-form__form label.valid {
-  color: #10ce6f;
-}
-
 .job-form__form label.valid.no-required {
   color: rgba(0, 0, 0, 0.7);
 }
 
 .job-form__form label.valid input {
   color: #10ce6f;
-  border-color: #10ce6f;
-}
-
-.job-form__form label.invalid {
-  color: #e92731;
 }
 
 .job-form__form label.invalid input {
   color: #e92731;
-  border-color: #e92731;
 }
 
 .job-form__form .submit-link {
@@ -9540,19 +9530,6 @@ header .container .row {
   height: 100%;
 }
 
-.title-content-image-text__image .image::before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6)));
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-}
-
 .title-content-image-text__image .image .article {
   position: absolute;
   top: 0;
@@ -9567,6 +9544,8 @@ header .container .row {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  color: white;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .title-content-image-text__image .image .article > p {
@@ -14433,6 +14412,10 @@ header .container .row {
 }
 
 @media screen and (min-width: 1200px) {
+  .tabs__page ul {
+    padding: 15px 0;
+  }
+
   .tabs__page ul li {
     font-size: 40px;
     line-height: 55px;
