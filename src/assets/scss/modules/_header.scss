@@ -16,7 +16,7 @@ header {
     .header__menu {
       ul{
         li{
-          &.active{
+          &.current_page_item {
             &::after{
               background-color: $accent-color;
               width: 100%;
@@ -34,7 +34,7 @@ header {
     .header__menu {
       ul{
         li{
-          &.active{
+          &.current_page_item {
             &::after{
               background-color: #1B1919;
               width: 100%;

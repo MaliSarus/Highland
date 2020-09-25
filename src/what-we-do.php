@@ -51,17 +51,20 @@
 ?>
 
 <section class="top-block top-block_one-column">
-    <div class="top-block__desktop" style="background-image: url('./assets/img/top-block/1.png')">
+    <div class="top-block__desktop" style="background-image: url('./assets/img/top-block/9861-min.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-6">
                     <div class="text">
                         <h1>Our Services</h1>
-                        <p>At the core of our services is the drive to assist our clients in thriving from concept to
+                        <div class="top-block__desc">
+                            At the core of our services is the drive to assist our clients in thriving from concept to
                             exit through strategic guidance, resources, opportunities, and relationships, while
                             navigating the many pitfalls the executive team & board faces in the process. We focus our
                             clients on who they want to become and work backward to achieve their Vision, identifying
-                            the key strategic initiatives, objectives, milestones, actions, risks, and resources.</p>
+                            the key strategic initiatives, objectives, milestones, actions, risks, and resources.
+                        </div>
+
                     </div>
                 </div>
             </div>

@@ -60,21 +60,21 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="logo-slider__slide">
-                                <div class="image"><img src="./assets/img/logo-slider/4.png" alt=""></div>
-                                <div class="text">
-                                    <h3>ZygoFix, Ltd.</h3>
-                                    <p>Medical Device</p>
-                                </div>
-                                <div class="location">
-                                    <svg class="location-icon">
-                                        <use xlink:href="#location-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-                                    </svg>
-                                    Israel
-                                </div>
-                            </div>
-                        </div>
+<!--                        <div class="swiper-slide">-->
+<!--                            <div class="logo-slider__slide">-->
+<!--                                <div class="image"><img src="./assets/img/logo-slider/4.png" alt=""></div>-->
+<!--                                <div class="text">-->
+<!--                                    <h3>ZygoFix, Ltd.</h3>-->
+<!--                                    <p>Medical Device</p>-->
+<!--                                </div>-->
+<!--                                <div class="location">-->
+<!--                                    <svg class="location-icon">-->
+<!--                                        <use xlink:href="#location-icon" xmlns:xlink="http://www.w3.org/1999/xlink"></use>-->
+<!--                                    </svg>-->
+<!--                                    Israel-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
                     </div>
                 </div>
                 <div class="logo-slider-arrow prev"></div>

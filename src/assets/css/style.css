@@ -7951,24 +7951,22 @@ label.file::before {
   transition: transform .25s, -webkit-transform .25s;
 }
 
-label.valid.no-required {
-  color: #B1B1B3;
+label.file.can-delete::before {
+  -webkit-transform: translateZ(0) rotate(45deg);
+  transform: translateZ(0) rotate(45deg);
 }
 
-label.valid.no-required input {
-  border-color: #B1B1B3;
+label.file.can-delete:hover::before {
+  -webkit-transform: translateZ(0) scale(1.1) rotate(45deg);
+  transform: translateZ(0) scale(1.1) rotate(45deg);
 }
 
-label.valid.no-required input:hover {
-  border-color: black;
+label.valid-submit input {
+  border-color: #e92731;
 }
 
-label.valid.no-required input:focus {
-  border-color: #015FFF;
-}
-
-label.invalid input {
-  color: #e92731;
+label.invalid-submit input {
+  border-color: #e92731;
 }
 
 input,
@@ -8360,7 +8358,7 @@ header.dark {
   backdrop-filter: blur(10px);
 }
 
-header.dark .header__menu ul li.active::after {
+header.dark .header__menu ul li.current_page_item::after {
   background-color: #015FFF;
   width: 100%;
   left: 0;
@@ -8375,7 +8373,7 @@ header.scrolled {
   backdrop-filter: blur(10px);
 }
 
-header.scrolled .header__menu ul li.active::after {
+header.scrolled .header__menu ul li.current_page_item::after {
   background-color: #1B1919;
   width: 100%;
   left: 0;
@@ -8762,7 +8760,7 @@ header .container .row {
   padding-top: 88px;
   padding-bottom: 30px;
   position: relative;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -8775,9 +8773,9 @@ header .container .row {
   display: block;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.6)));
-  background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, black), to(rgba(255, 255, 255, 0)));
+  background: -o-linear-gradient(bottom, black 7%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(360deg, black 7%, rgba(255, 255, 255, 0) 100%);
 }
 
 .top-block__desktop .text {
@@ -8808,6 +8806,11 @@ header .container .row {
 }
 
 .top-block__desktop .text p {
+  display: none;
+  font-weight: 600;
+}
+
+.top-block__desc {
   display: none;
   font-weight: 600;
 }
@@ -8934,7 +8937,7 @@ header .container .row {
 
 .tabs__page .image {
   position: relative;
-  height: 400px;
+  height: 340px;
   -webkit-transition: opacity .2s;
   -o-transition: opacity .2s;
   transition: opacity .2s;
@@ -9038,10 +9041,6 @@ header .container .row {
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-}
-
-.logo-slider__slide:hover {
-  cursor: pointer;
 }
 
 .logo-slider__slide:hover .image img {
@@ -9418,7 +9417,7 @@ header .container .row {
 
 .compas-list__compas {
   position: absolute;
-  right: -60px;
+  right: -68px;
   top: 20px;
   width: 245px;
   height: 245px;
@@ -9620,6 +9619,7 @@ header .container .row {
 
 .title-content-image-text__text .text p {
   margin: 18px 0;
+  line-height: 23px;
 }
 
 .title-content-image-text__text .text :first-child {
@@ -9763,7 +9763,7 @@ header .container .row {
 .two-lists-with-icons .list ol li {
   font-size: 14px;
   line-height: 30px;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .two-lists-with-icons .list ol li::before {
@@ -9796,7 +9796,7 @@ header .container .row {
 }
 
 .pic-and-text-with-title__image .image {
-  height: 285px;
+  height: 340px;
 }
 
 .pic-and-text-with-title__text .list ul {
@@ -11099,6 +11099,10 @@ header .container .row {
 }
 
 @media screen and (min-width: 576px) {
+  .tabs__page .image {
+    height: 400px;
+  }
+
   .pic-and-text .image {
     height: 400px;
   }
@@ -12125,6 +12129,12 @@ header .container .row {
     line-height: 28px;
   }
 
+  .top-block__desc {
+    display: block;
+    font-size: 16px;
+    line-height: 28px;
+  }
+
   .top-block__mobile {
     display: none;
   }
@@ -12171,6 +12181,10 @@ header .container .row {
 
   .tabs__page .text {
     margin-bottom: 0;
+  }
+
+  .tabs__page .image {
+    height: 450px;
   }
 
   .tabs__page .lm-link {
@@ -12464,10 +12478,6 @@ header .container .row {
     line-height: 22px;
   }
 
-  .title-content-image-text__text .text p {
-    line-height: 23px;
-  }
-
   .title-content-image-text__text .text :first-child {
     margin-top: 6px;
   }
@@ -12578,9 +12588,9 @@ header .container .row {
   }
 
   .text-on-pic__background::before {
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.7)));
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(black));
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, black 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, black 100%);
   }
 
   .text-on-pic__title {
@@ -13474,6 +13484,10 @@ header .container .row {
 @media screen and (min-width: 992px) {
   .hamburger {
     display: none;
+  }
+
+  .tabs__page .image {
+    height: 500px;
   }
 
   .job-form {
@@ -14438,12 +14452,12 @@ header .container .row {
 
 @media screen and (min-width: 1200px) {
   .tabs__page ul {
-    padding: 15px 0;
+    padding: calc(72px - 27px) 0 72px;
   }
 
   .tabs__page ul li {
-    font-size: 40px;
-    line-height: 55px;
+    font-size: 35px;
+    line-height: 45px;
     margin-bottom: 43px;
   }
 

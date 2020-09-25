@@ -9,13 +9,12 @@
     var scrolledOrigin = null;
 
 
-
     function isSet(element) {
         return element.length !== 0;
     }
 
     function uiDefaultSet() {
-        if(!(isSet($('.top-slider'))) && !(isSet($('.top-block')))){
+        if (!(isSet($('.top-slider'))) && !(isSet($('.top-block')))) {
             $('body').addClass('no-top')
         }
         if (!(isSet($('.top-slider')))) {
@@ -30,6 +29,9 @@
             var submitButton = $(this).parents('form').find('.submit-link');
             if (submitButton.hasClass('error') || submitButton.hasClass('success')) {
                 submitButton.removeClass(['error', 'success']);
+            }
+            if ($(this).parent().hasClass('invalid-submit')) {
+                $(this).parent().removeClass('invalid-submit');
             }
         })
 
@@ -52,6 +54,7 @@
             }
         })
         numInput.on('input', function () {
+            $(this).val($(this).val().replace(/[^0-9+\-]/, ''));
             if ($(this).val().search(numPattern) == 0) {
                 $(this).parent().removeClass('invalid').addClass('valid');
             } else {
@@ -60,13 +63,22 @@
         });
         nameInput.on('input', function () {
             $(this).val($(this).val().replace(/[^A-z\s]/, ''));
-            var valLength = $(this).val().length;
-            if (valLength > 2) {
+            var val = $(this).val();
+            if (val !== '') {
                 $(this).parent().removeClass('invalid').addClass('valid');
             } else {
                 $(this).parent().removeClass('valid').addClass('invalid');
             }
         });
+
+        $('.scrolling a').on('click', function (e) {
+            e.preventDefault();
+            var destination = $(this).attr('href');
+            $('html, body').animate({
+                scrollTop: $(destination).position().top - $('header').height()
+            }, 700);
+        });
+
     }
 
     function topSliderInit() {
@@ -127,19 +139,22 @@
                     slidesPerView: 3,
                 },
                 992: {
-                    slidesPerView: 4,
+                    slidesPerView: 3,
                 },
             }
         });
-        var mySwiperControl = document.querySelector('.logo-slider__slider.swiper-container').swiper;
 
+
+        var mySwiperControl = document.querySelector('.logo-slider__slider.swiper-container').swiper;
         var logoSliderArrow = $('.logo-slider-arrow');
         logoSliderArrow.on('click', function () {
             if ($(this).is('.prev')) {
                 mySwiperControl.slidePrev();
+                mySwiper.update()
             }
             if ($(this).is('.next')) {
                 mySwiperControl.slideNext();
+                mySwiper.update()
             }
         });
     };
@@ -248,7 +263,7 @@
                 labels.each(function () {
                     if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
                         failFlag = 1;
-                        $(this).addClass('invalid').children('label').addClass('invalid');
+                        $(this).addClass('invalid-submit');
                     }
                 });
                 if (failFlag == 1) {
@@ -277,14 +292,14 @@
             }
             jobForm.on('click', '.can-delete', function (e) {
                 e.preventDefault();
-                $(this).val('');
-                $(this).siblings('.file__rezult').text('Add resume');
+                $(this).children().val('');
+                $(this).children().siblings('.file__rezult').text('Add resume');
                 $(this).removeClass('can-delete');
             })
             jobFileInput.on('change', function () {
                 var file = $(this)[0].files[0];
                 $(this).siblings('.file__rezult').text(file.name);
-                $(this).addClass('can-delete');
+                $(this).parent().addClass('can-delete');
             })
             jobForm.on('submit', function (event) {
                 event.preventDefault();
@@ -294,7 +309,7 @@
                 labels.each(function () {
                     if ($(this).hasClass('invalid') || !($(this).hasClass('valid'))) {
                         failFlag = 1;
-                        $(this).addClass('invalid').children('label').addClass('invalid');
+                        $(this).addClass('invalid-submit');
                     }
                 });
                 if (failFlag == 1) {
@@ -385,23 +400,20 @@
 
 
         }
-        
 
-        if(isSet($('.accent-text'))){
+
+        if (isSet($('.accent-text'))) {
             $(window).scroll(parallaxScrolling);
 
             function parallaxScrolling() {
                 var scrolled = $(window).scrollTop();
                 console.log(scrolled + $(window).height() >= $('.accent-text').position().top);
-                if (scrolled + $(window).height() >= $('.accent-text').position().top)
-                {
-                    if (!scrolledOrigin)
-                    {
+                if (scrolled + $(window).height() >= $('.accent-text').position().top) {
+                    if (!scrolledOrigin) {
                         scrolledOrigin = scrolled + $(window).height()
                     }
-                    $('.accent-text').css('background-position','0 ' + (0 - ((scrolled - scrolledOrigin) * .1)) + 'px');
-                }
-                else{
+                    $('.accent-text').css('background-position', '0 ' + (0 - ((scrolled - scrolledOrigin) * .1)) + 'px');
+                } else {
                     scrolledOrigin = null;
                 }
 

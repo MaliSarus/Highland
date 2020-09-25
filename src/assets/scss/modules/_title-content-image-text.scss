@@ -132,9 +132,7 @@
       }
       p{
         margin: 18px 0;
-        @media screen and (min-width: $md-width){
-          line-height: 23px;
-        }
+        line-height: 23px;
       }
       & :first-child{
         margin-top: 0;

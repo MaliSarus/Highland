@@ -17,10 +17,12 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  &.hidden{
+
+  &.hidden {
     overflow: hidden;
   }
-  &.no-top{
+
+  &.no-top {
     padding-top: 58.25px;
     @media screen and (min-width: $md-width) {
       padding-top: 92px;
@@ -28,7 +30,7 @@ body {
   }
 }
 
-main{
+main {
   flex-grow: 1;
 }
 
@@ -40,27 +42,28 @@ header, main, footer {
     -moz-osx-font-smoothing: grayscale;
   }
 }
-h1,h2,h3,h4,h5,h6,p,ul,ol{
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
   color: $color;
 }
 
-ul,ol{
+ul, ol {
   padding: 0;
   font-weight: bold;
 }
 
-h2{
+h2 {
   font-size: 20px;
   line-height: 27px;
   font-weight: bold;
-  @media screen and (min-width: $md-width){
+  @media screen and (min-width: $md-width) {
     font-size: 24px;
     line-height: 33px;
   }
 }
 
-p{
+p {
   font-size: 14px;
   line-height: 26px;
 }
@@ -77,22 +80,25 @@ ul, ol {
       line-height: 40px;
       margin-bottom: 5px;
     }
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
 }
 
-ol{
+ol {
   counter-reset: myCounter;
-  li{
+
+  li {
     display: flex;
     padding-left: 0;
     line-height: 28px;
     @media screen and (min-width: $md-width) {
       line-height: 40px;
     }
-    &::before{
+
+    &::before {
       position: relative;
       display: block;
       counter-increment: myCounter;
@@ -102,15 +108,15 @@ ol{
       text-transform: uppercase;
       margin-right: 17px;
       top: 7px;
-      @media screen and (min-width: $md-width){
+      @media screen and (min-width: $md-width) {
         top: 14px;
       }
     }
   }
 }
 
-ul{
-  li{
+ul {
+  li {
     padding-left: 20px;
     //@media screen and (min-width: $md-width){
     //  padding-left: 25px;
@@ -132,24 +138,27 @@ ul{
   }
 }
 
-label{
+label {
   display: block;
   color: #B1B1B3;
   font-size: 14px;
   line-height: 19px;
   font-weight: bold;
   margin-bottom: 20px;
-  &.file{
+
+  &.file {
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: color .25s;
-    &:hover{
-      &::before{
+
+    &:hover {
+      &::before {
         transform: translateZ(0) scale(1.1);
       }
     }
-    &::before{
+
+    &::before {
       width: 24px;
       height: 24px;
       display: inline-block;
@@ -159,30 +168,46 @@ label{
       transform: translateZ(0);
       transition: transform .25s;
     }
-  }
-  &.valid{
-    &.no-required{
-      color: #B1B1B3;
-      input{
-        border-color: #B1B1B3;
-        &:hover{
-          border-color: black;
-        }
-        &:focus{
-          border-color: $accent-color;
+
+    &.can-delete {
+      &::before {
+        transform: translateZ(0) rotate(45deg);
+      }
+      &:hover {
+        &::before {
+          transform: translateZ(0) scale(1.1) rotate(45deg);
         }
       }
     }
   }
 
-  &.invalid{
-    input{
-      color: #e92731;
+  &.valid-submit {
+    input {
+      border-color: #e92731;
+    }
+
+    //&.no-required{
+    //  color: #B1B1B3;
+    //  input{
+    //    border-color: #B1B1B3;
+    //    &:hover{
+    //      border-color: black;
+    //    }
+    //    &:focus{
+    //      border-color: $accent-color;
+    //    }
+    //  }
+    //}
+  }
+
+  &.invalid-submit {
+    input {
+      border-color: #e92731;
     }
   }
 }
 
-input, textarea{
+input, textarea {
   background: transparent;
   font-size: 16px;
   line-height: 22px;
@@ -193,32 +218,33 @@ input, textarea{
   border: 1px solid #B1B1B3;
   transition: border-color .2s;
   color: black;
+
   &:hover,
-  &:focus{
+  &:focus {
     outline: none;
   }
-  &:hover{
+
+  &:hover {
     border-color: black;
   }
-  &:focus{
+
+  &:focus {
     border-color: $accent-color;
   }
 }
 
-input{
+input {
   font-weight: 600;
 }
 
-input[type="file"]{
+input[type="file"] {
   display: none;
 }
 
-textarea{
+textarea {
   resize: none;
   font-weight: normal;
 }
-
-
 
 
 .container-sm {

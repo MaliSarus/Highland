@@ -2,7 +2,7 @@
 require './modules/header.php';
 
 // 2 СТРАНИЦА
-//require './modules/top-block_one-column.php';
+require './modules/top-block_one-column.php';
 require './modules/text-5-7.php';
 ?>
 
