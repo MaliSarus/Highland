@@ -6,6 +6,7 @@
     var xlWidth = 1200;
     var mailPattern = /^[\.a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
     var numPattern = /^[+][0-9]+$/i;
+    var scrolledOrigin = null;
 
 
     function isSet(element) {
@@ -318,35 +319,34 @@
 
             if (!compasStartInterval) {
                 gsap.killTweensOf('.compas__arrow');
-                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
-                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
-                gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
+                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
+                gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
             }
 
             compasStartInterval = setInterval(function () {
                 gsap.killTweensOf('.compas__arrow');
-                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
-                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
-                gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
-            }, 4000);
+                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
+                gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
+            }, 9000);
 
             compasList.on('mouseleave', function () {
                 clearInterval(compasStartInterval);
                 compasStartInterval = null;
                 if (!compasInterval) {
-                    console.log('start')
                     gsap.killTweensOf('.compas__arrow');
-                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
-                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
-                    gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
+                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
+                    gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
                 }
 
-                compasInterval = setInterval(function () {
+                compasStartInterval = setInterval(function () {
                     gsap.killTweensOf('.compas__arrow');
-                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
-                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 1, rotation: -100});
-                    gsap.to(".compas__arrow", {delay: 3, ease: 'elastic(5,1)', duration: 1, rotation: -80});
-                }, 4000)
+                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
+                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
+                    gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
+                }, 9000);
 
             })
 
@@ -380,6 +380,27 @@
             })
 
 
+        }
+
+        if(isSet($('.accent-text'))){
+            $(window).scroll(parallaxScrolling);
+
+            function parallaxScrolling() {
+                var scrolled = $(window).scrollTop();
+                console.log(scrolled + $(window).height() >= $('.accent-text').position().top);
+                if (scrolled + $(window).height() >= $('.accent-text').position().top)
+                {
+                    if (!scrolledOrigin)
+                    {
+                        scrolledOrigin = scrolled + $(window).height()
+                    }
+                    $('.accent-text').css('background-position','0 ' + (0 - ((scrolled - scrolledOrigin) * .1)) + 'px');
+                }
+                else{
+                    scrolledOrigin = null;
+                }
+
+            }
         }
 
 

@@ -26,11 +26,13 @@ main{
   flex-grow: 1;
 }
 
-* {
-  font-family: 'Open Sans', sans-serif !important;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+header,main,footer {
+  * {
+    font-family: 'Open Sans', sans-serif !important;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 h1,h2,h3,h4,h5,h6,p,ul,ol{
@@ -154,10 +156,6 @@ label{
     }
   }
   &.valid{
-
-    input{
-      color: #10ce6f;
-    }
     &.no-required{
       color: #B1B1B3;
       input{
@@ -173,7 +171,6 @@ label{
   }
 
   &.invalid{
-
     input{
       color: #e92731;
     }

@@ -7810,7 +7810,9 @@ main {
   flex-grow: 1;
 }
 
-* {
+header *,
+main *,
+footer * {
   font-family: 'Open Sans', sans-serif !important;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -7943,10 +7945,6 @@ label.file::before {
   -o-transition: transform .25s;
   transition: transform .25s;
   transition: transform .25s, -webkit-transform .25s;
-}
-
-label.valid input {
-  color: #10ce6f;
 }
 
 label.valid.no-required {
@@ -8597,11 +8595,15 @@ header .container .row {
   align-items: flex-end;
 }
 
+.top-slider__slide-content .content__block {
+  color: white;
+}
+
 .top-slider__slide-content .content__block * {
   color: white;
 }
 
-.top-slider__slide-content .content__block h1 {
+.top-slider__slide-content .content__block h2 {
   font-size: 22px;
   color: white;
   font-weight: bold;
@@ -8769,6 +8771,7 @@ header .container .row {
 }
 
 .top-block__desktop .text {
+  color: white;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -8781,10 +8784,17 @@ header .container .row {
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 257px;
+  font-weight: 600;
 }
 
 .top-block__desktop .text * {
   color: white;
+}
+
+.top-block__desktop .text h1 {
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: bold;
 }
 
 .top-block__desktop .text p {
@@ -9299,10 +9309,6 @@ header .container .row {
 
 .job-form__form label.valid.no-required {
   color: rgba(0, 0, 0, 0.7);
-}
-
-.job-form__form label.valid input {
-  color: #10ce6f;
 }
 
 .job-form__form label.invalid input {
@@ -12047,7 +12053,7 @@ header .container .row {
     padding: 141px 0;
   }
 
-  .top-slider__slide-content .content__block h1 {
+  .top-slider__slide-content .content__block h2 {
     font-size: 40px;
     line-height: 54px;
   }
@@ -12086,9 +12092,13 @@ header .container .row {
 
   .top-block__desktop .text {
     min-height: 550px;
+    font-size: 16px;
+    line-height: 28px;
   }
 
-  .top-block__desktop .text h2 {
+  .top-block__desktop .text h1 {
+    font-size: 24px;
+    line-height: 33px;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
