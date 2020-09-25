@@ -9,7 +9,7 @@
         </div>
         <div class="title-content-image-text__item">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 p-0 pl-sm-3 pr-sm-3">
                     <div class="title-content-image-text__image">
                         <div class="image">
                             <img src="./assets/img/title-content-image-text/1.png" alt="">
@@ -88,7 +88,7 @@
         </div>
         <div class="title-content-image-text__item">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 p-0 pl-sm-3 pr-sm-3">
                     <div class="title-content-image-text__image">
                         <div class="image">
                             <img src="./assets/img/title-content-image-text/2.png" alt="">

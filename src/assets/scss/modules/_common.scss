@@ -161,11 +161,6 @@ label{
     }
   }
   &.valid{
-    color:#10ce6f;
-    input{
-      color: #10ce6f;
-      border-color: #10ce6f;
-    }
     &.no-required{
       color: #B1B1B3;
       input{
@@ -181,10 +176,8 @@ label{
   }
 
   &.invalid{
-    color: #e92731;
     input{
       color: #e92731;
-      border-color: #e92731;
     }
   }
 }

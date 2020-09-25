@@ -28,8 +28,11 @@
       justify-content: flex-end;
       flex-direction: column;
       min-height: 375px - 88px - 30px;
+      font-weight: 600;
       @media screen and (min-width: $md-width) {
         min-height: 780px - 152px - 78px;
+        font-size: 16px;
+        line-height: 28px;
       }
 
       * {

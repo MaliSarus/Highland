@@ -13,7 +13,7 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-8">
                                                     <div class="content__block">
-                                                        <h1>Highland Capital Advisors, founded by experienced Operators</h1>
+                                                        <h2>Highland Capital Advisors, founded by experienced Operators</h2>
                                                         <p>Lorem ipsum dolor sit amet.</p>
                                                     </div>
                                                 </div>
@@ -30,7 +30,7 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-8">
                                                     <div class="content__block">
-                                                        <h1>Highland Capital Advisors, founded by experienced Operators</h1>
+                                                        <h2>Highland Capital Advisors, founded by experienced Operators</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -46,7 +46,7 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-8">
                                                     <div class="content__block">
-                                                        <h1>Highland Capital Advisors, founded by experienced Operators</h1>
+                                                        <h2>Highland Capital Advisors, founded by experienced Operators</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -62,7 +62,7 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-8">
                                                     <div class="content__block">
-                                                        <h1>Highland Capital Advisors, founded by experienced Operators</h1>
+                                                        <h2>Highland Capital Advisors, founded by experienced Operators</h2>
                                                     </div>
                                                 </div>
                                             </div>
@@ -82,7 +82,7 @@
                                             <div class="row">
                                                 <div class="col-12 col-md-8">
                                                     <div class="content__block">
-                                                        <h1>Highland Capital Advisors, founded by experienced Operators</h1>
+                                                        <h2>Highland Capital Advisors, founded by experienced Operators</h2>
                                                     </div>
                                                 </div>
                                             </div>
