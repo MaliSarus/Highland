@@ -334,38 +334,37 @@
             var compasInterval = null;
             var compasStartInterval = null;
 
-            // gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 2, rotation: -90});
 
             if (!compasStartInterval) {
                 gsap.killTweensOf('.compas__arrow');
-                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
-                gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
+                gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
+                gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
             }
 
             compasStartInterval = setInterval(function () {
                 gsap.killTweensOf('.compas__arrow');
-                gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-                gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
-                gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
-            }, 9000);
+                gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
+                gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.5)', duration: 5, rotation: -90});
+            }, 2500);
 
             compasList.on('mouseleave', function () {
                 clearInterval(compasStartInterval);
                 compasStartInterval = null;
                 if (!compasInterval) {
                     gsap.killTweensOf('.compas__arrow');
-                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
-                    gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
+                    gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                    gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
+                    gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
                 }
 
                 compasStartInterval = setInterval(function () {
                     gsap.killTweensOf('.compas__arrow');
-                    gsap.to(".compas__arrow", {ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
-                    gsap.to(".compas__arrow", {delay: 2, ease: 'elastic(5,1)', duration: 5, rotation: -100});
-                    gsap.to(".compas__arrow", {delay: 4, ease: 'elastic(3,3)', duration: 5, rotation: -80});
-                }, 9000);
+                    gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                    gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
+                    gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.5)', duration: 5, rotation: -90});
+                }, 2500);
 
             })
 

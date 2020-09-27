@@ -109,6 +109,7 @@
           }
           &:hover{
             span {
+              cursor: default;
               &::before {
                 transform: translateY(0);
               }

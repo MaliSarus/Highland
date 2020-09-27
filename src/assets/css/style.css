@@ -8135,9 +8135,6 @@ textarea {
   width: 20px;
   height: 20px;
   background: url("../img/interface/button-arrow.svg") center/contain no-repeat;
-  -webkit-transition: background .2s;
-  -o-transition: background .2s;
-  transition: background .2s;
 }
 
 .submit-link.load:hover span::before {
@@ -8538,6 +8535,10 @@ header .container .row {
 
 .top-slider__block .slider-control .row {
   height: 100%;
+}
+
+.top-slider__slider {
+  width: 100%;
 }
 
 .top-slider__slide {
@@ -9483,6 +9484,10 @@ header .container .row {
 
 .compas-list__text .text ul li::before {
   top: calc(23px / 2 - 2.5px);
+}
+
+.compas-list__text .text ul li:hover span {
+  cursor: default;
 }
 
 .compas-list__text .text ul li:hover span::before {
