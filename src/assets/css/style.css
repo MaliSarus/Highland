@@ -8761,12 +8761,17 @@ header .container .row {
   padding-top: 88px;
   padding-bottom: 30px;
   position: relative;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.top-block__desktop::before {
+.top-block__desktop-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.top-block__desktop-background::before {
   position: absolute;
   left: 0;
   top: 0;
@@ -8774,9 +8779,24 @@ header .container .row {
   display: block;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, black), to(rgba(255, 255, 255, 0)));
-  background: -o-linear-gradient(bottom, black 7%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(360deg, black 7%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.9)), color-stop(50%, rgba(0, 0, 0, 0.1)));
+  background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 50%);
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 50%);
+}
+
+.top-block__desktop-background picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.top-block__desktop-background img {
+  width: 100%;
+  height: 100%;
+  -o-object-position: center top;
+  object-position: center top;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .top-block__desktop .text {
@@ -8792,7 +8812,7 @@ header .container .row {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 257px;
+  min-height: 402px;
   font-weight: 600;
 }
 
@@ -9319,10 +9339,6 @@ header .container .row {
 
 .job-form__form label.valid.no-required {
   color: rgba(0, 0, 0, 0.7);
-}
-
-.job-form__form label.invalid input {
-  color: #e92731;
 }
 
 .job-form__form .submit-link {
@@ -11104,6 +11120,10 @@ header .container .row {
 }
 
 @media screen and (min-width: 576px) {
+  .top-block__desktop .text {
+    min-height: 462px;
+  }
+
   .tabs__page .image {
     height: 400px;
   }
@@ -12115,7 +12135,7 @@ header .container .row {
   }
 
   .top-block__desktop .text {
-    min-height: 550px;
+    min-height: 390px;
     font-size: 16px;
     line-height: 28px;
   }
@@ -13489,6 +13509,10 @@ header .container .row {
 @media screen and (min-width: 992px) {
   .hamburger {
     display: none;
+  }
+
+  .top-block__desktop .text {
+    min-height: 550px;
   }
 
   .tabs__page .image {

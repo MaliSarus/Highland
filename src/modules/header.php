@@ -34,8 +34,8 @@
                     <ul>
                         <li class="active"><a href="about-us.php">Our Firm</a></li>
                         <li><a href="what-we-do.php">What we Do</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li class="scrolling"><a href="#career">Careers</a></li>
+                        <li class="scrolling"><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>

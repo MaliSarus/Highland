@@ -5,7 +5,7 @@
     var lgWidth = 992;
     var xlWidth = 1200;
     var mailPattern = /^[\.a-z0-9_-]+@[a-z0-9-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
-    var numPattern = /^[+][0-9]+$/i;
+    var numPattern = /^[+][0-9\-]+$/i;
     var scrolledOrigin = null;
 
 
@@ -72,11 +72,19 @@
         });
 
         $('.scrolling a').on('click', function (e) {
-            e.preventDefault();
             var destination = $(this).attr('href');
-            $('html, body').animate({
-                scrollTop: $(destination).position().top - $('header').height()
-            }, 700);
+            if (isSet($(destination))) {
+                e.preventDefault();
+                if ($(window).width() < mdWidth) {
+                    var hamburger = $('.hamburger');
+                    hamburger.trigger('click');
+                }
+                $('html, body').animate({
+                    scrollTop: $(destination).position().top - $('header').outerHeight()
+                }, 700);
+            } else {
+                console.log($(location).attr('href', '/' + destination));
+            }
         });
 
     }
@@ -91,6 +99,7 @@
             direction: 'horizontal',
             loop: true,
             grabCursor: true,
+            speed: 0,
             on: {
                 slideChange: function () {
                     var paginationBullet = sliderPagination.find('span').removeClass('active');
@@ -126,7 +135,7 @@
     };
 
     function logoSliderInit() {
-        var mySwiper = new Swiper('.logo-slider__slider', {
+        var mySwiperOptions =  {
             // Optional parameters
             slidesPerView: 1,
             spaceBetween: 50,
@@ -138,11 +147,9 @@
                     spaceBetween: 0,
                     slidesPerView: 3,
                 },
-                992: {
-                    slidesPerView: 3,
-                },
             }
-        });
+        }
+        var mySwiper = new Swiper('.logo-slider__slider', mySwiperOptions);
 
 
         var mySwiperControl = document.querySelector('.logo-slider__slider.swiper-container').swiper;
@@ -196,6 +203,26 @@
             console.log(jobFormPos);
             bgImage.width(jobFormPos + jobFormMargin / 2)
         }
+    }
+
+    function ajaxFormRequest(formobject, phpscriptpath){
+        //formobject, это объект формы. Например $('form#myform')
+        //phpscriptpath путь к файлу скрипта, в который отправляем данные из формы
+        var form = formobject;
+        var msg  = form.serialize();
+        const successfunctionajax = successfunction;
+        $.ajax({
+            type: 'POST',
+            url: phpscriptpath, // Обработчик собственно
+            data: msg,
+            success: function () {
+                return 'success'
+            },
+            error:  function(){
+                return 'error'
+            }
+        });
+        return false;
     }
 
     //Готовность документа
@@ -272,10 +299,16 @@
                         that.find('.submit-link').removeClass('load').addClass('error');
                     }, 500)
                 } else {
-                    console.log('success');
-                    setTimeout(function () {
+                    var scriptPath =  '/wp-content/themes/amerikano/contact-form-proc.php';
+                    var result = ajaxFormRequest(that, scriptPath);
+                    if (result === 'success'){
                         that.find('.submit-link').removeClass('load').addClass('success');
-                    }, 500)
+                    }
+                    else{
+                        setTimeout(function () {
+                            that.find('.submit-link').removeClass('load').addClass('error');
+                        }, 500)
+                    }
                 }
             });
         }
@@ -314,15 +347,20 @@
                 });
                 if (failFlag == 1) {
                     console.log('fail');
-
                     setTimeout(function () {
                         that.find('.submit-link').removeClass('load').addClass('error');
                     }, 500)
                 } else {
-                    console.log('success');
-                    setTimeout(function () {
+                    var scriptPath =  '/wp-content/themes/amerikano/job-form-proc.php';
+                    var result = ajaxFormRequest(that, scriptPath);
+                    if (result === 'success'){
                         that.find('.submit-link').removeClass('load').addClass('success');
-                    }, 500)
+                    }
+                    else{
+                        setTimeout(function () {
+                            that.find('.submit-link').removeClass('load').addClass('error');
+                        }, 500)
+                    }
                 }
             });
 
@@ -337,14 +375,14 @@
 
             if (!compasStartInterval) {
                 gsap.killTweensOf('.compas__arrow');
-                gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                gsap.to(".compas__arrow", {ease: 'elastic(2,1)', duration: 4, rotation: -100});
                 gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
                 gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
             }
 
             compasStartInterval = setInterval(function () {
                 gsap.killTweensOf('.compas__arrow');
-                gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                gsap.to(".compas__arrow", {ease: 'elastic(2,1)', duration: 4, rotation: -100});
                 gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
                 gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.5)', duration: 5, rotation: -90});
             }, 2500);
@@ -354,14 +392,14 @@
                 compasStartInterval = null;
                 if (!compasInterval) {
                     gsap.killTweensOf('.compas__arrow');
-                    gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                    gsap.to(".compas__arrow", {ease: 'elastic(2,1)', duration: 4, rotation: -100});
                     gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
                     gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.3)', duration: 5, rotation: -90});
                 }
 
                 compasStartInterval = setInterval(function () {
                     gsap.killTweensOf('.compas__arrow');
-                    gsap.to(".compas__arrow", { ease: 'elastic(2,1)', duration: 4, rotation: -100});
+                    gsap.to(".compas__arrow", {ease: 'elastic(2,1)', duration: 4, rotation: -100});
                     gsap.to(".compas__arrow", {delay: 0.5, ease: 'elastic(2,1)', duration: 4, rotation: -80});
                     gsap.to(".compas__arrow", {delay: 1, ease: 'elastic(1,0.5)', duration: 5, rotation: -90});
                 }, 2500);
