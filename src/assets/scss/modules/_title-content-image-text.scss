@@ -115,6 +115,14 @@
         @media screen and (min-width: $md-width){
           margin-top: 50px;
         }
+        a{
+          color: $color;
+          text-decoration: underline;
+          transition: color .2s;
+          &:hover{
+            color: $accent-color;
+          }
+        }
         p{
           margin: 0;
         }

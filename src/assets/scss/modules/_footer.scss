@@ -88,15 +88,23 @@
   &__right{
     color: white;
     font-size: 14px;
-    h2{
+    *{
       color: white;
+    }
+    a{
+      text-decoration: underline;
+      transition: color .2s;
+      &:hover{
+        color: $accent-color;
+      }
+    }
+    h2{
       font-size: 14px;
       font-weight: bold;
       margin-bottom: 10px;
       line-height: 23px;
     }
     p{
-      color: white;
       font-size: 12px;
       line-height: 23px;
       margin-bottom: 20px;

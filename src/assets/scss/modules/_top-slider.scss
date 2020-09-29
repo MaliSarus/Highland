@@ -1,8 +1,25 @@
 .top-slider {
+  position: relative;
+  &__background{
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    .image{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      img{
+        animation: zoom 120s infinite;
+      }
+    }
+  }
   &__block {
     width: 100%;
     position: relative;
     .swiper-slide{
+      transition: none;
       .top-slider__slide-content{
         .content__block{
             opacity: 0;

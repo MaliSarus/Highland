@@ -42,7 +42,7 @@
       display: flex;
       justify-content: flex-end;
       flex-direction: column;
-      min-height: 520px - 88px - 30px;
+      min-height: 375px - 88px - 30px;
       font-weight: 600;
       @media screen and (min-width: $sm-width) {
         min-height: 580px - 88px - 30px;

@@ -135,15 +135,17 @@
     };
 
     function logoSliderInit() {
-        var mySwiperOptions =  {
+        var mySwiperOptions = {
             // Optional parameters
             slidesPerView: 1,
+            centeredSlides: true,
             spaceBetween: 50,
             direction: 'horizontal',
             loop: true,
             grabCursor: true,
             breakpoints: {
                 576: {
+                    centeredSlides: false,
                     spaceBetween: 0,
                     slidesPerView: 3,
                 },
@@ -205,11 +207,11 @@
         }
     }
 
-    function ajaxFormRequest(formobject, phpscriptpath){
+    function ajaxFormRequest(formobject, phpscriptpath) {
         //formobject, это объект формы. Например $('form#myform')
         //phpscriptpath путь к файлу скрипта, в который отправляем данные из формы
         var form = formobject;
-        var msg  = form.serialize();
+        var msg = form.serialize();
         const successfunctionajax = successfunction;
         $.ajax({
             type: 'POST',
@@ -218,7 +220,7 @@
             success: function () {
                 return 'success'
             },
-            error:  function(){
+            error: function () {
                 return 'error'
             }
         });
@@ -299,12 +301,11 @@
                         that.find('.submit-link').removeClass('load').addClass('error');
                     }, 500)
                 } else {
-                    var scriptPath =  '/wp-content/themes/amerikano/contact-form-proc.php';
+                    var scriptPath = '/wp-content/themes/amerikano/contact-form-proc.php';
                     var result = ajaxFormRequest(that, scriptPath);
-                    if (result === 'success'){
+                    if (result === 'success') {
                         that.find('.submit-link').removeClass('load').addClass('success');
-                    }
-                    else{
+                    } else {
                         setTimeout(function () {
                             that.find('.submit-link').removeClass('load').addClass('error');
                         }, 500)
@@ -328,11 +329,33 @@
                 $(this).children().val('');
                 $(this).children().siblings('.file__rezult').text('Add resume');
                 $(this).removeClass('can-delete');
+                $(this).removeClass('invalid').addClass('valid');
+                if($(this).hasClass('invalid-submit')){
+                    $(this).removeClass('invalid-submit');
+                }
             })
             jobFileInput.on('change', function () {
                 var file = $(this)[0].files[0];
-                $(this).siblings('.file__rezult').text(file.name);
-                $(this).parent().addClass('can-delete');
+                var label = $(this).parent();
+                label.addClass('can-delete');
+                if(label.hasClass('invalid-submit')){
+                    label.removeClass('invalid-submit');
+                }
+                var ext = $(this).val().match(/\.([^\.]+)$/)[1];
+                switch (ext) {
+                    case 'jpg':
+                    case 'jpeg':
+                    case 'doc':
+                    case 'docx':
+                    case 'pdf':
+                        $(this).siblings('.file__rezult').text(file.name);
+                        $(this).parent().removeClass('invalid').addClass('valid');
+                        break;
+                    default:
+                        $(this).siblings('.file__rezult').text('.' + ext + ' extention is not allowed');
+                        $(this).parent().removeClass('valid').addClass('invalid');
+                        $(this).val('');
+                }
             })
             jobForm.on('submit', function (event) {
                 event.preventDefault();
@@ -351,12 +374,11 @@
                         that.find('.submit-link').removeClass('load').addClass('error');
                     }, 500)
                 } else {
-                    var scriptPath =  '/wp-content/themes/amerikano/job-form-proc.php';
+                    var scriptPath = '/wp-content/themes/amerikano/job-form-proc.php';
                     var result = ajaxFormRequest(that, scriptPath);
-                    if (result === 'success'){
+                    if (result === 'success') {
                         that.find('.submit-link').removeClass('load').addClass('success');
-                    }
-                    else{
+                    } else {
                         setTimeout(function () {
                             that.find('.submit-link').removeClass('load').addClass('error');
                         }, 500)

@@ -1,4 +1,9 @@
 <section class="top-slider">
+    <div class="top-slider__background">
+        <div class="image">
+            <img src="./assets/img/top-slider/1.png" alt="">
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 p-0">
@@ -7,7 +12,7 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
+<!--                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>-->
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -24,7 +29,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
+<!--                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>-->
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -40,7 +45,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
+<!--                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>-->
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
@@ -56,7 +61,7 @@
                             </div>
                             <div class="swiper-slide">
                                 <div class="top-slider__slide">
-                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>
+<!--                                    <div class="image"><img src="./assets/img/top-slider/1.png" alt=""></div>-->
                                     <div class="top-slider__slide-content">
                                         <div class="container">
                                             <div class="row">
