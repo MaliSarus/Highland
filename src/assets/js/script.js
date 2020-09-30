@@ -96,19 +96,22 @@
         var mySwiper = new Swiper('.top-slider__slider', {
             // Optional parameters
             slidesPerView: 1,
-            direction: 'horizontal',
             loop: true,
-            grabCursor: true,
+            grabCursor: false,
             speed: 0,
-            on: {
-                slideChange: function () {
-                    var paginationBullet = sliderPagination.find('span').removeClass('active');
-                    $(paginationBullet[mySwiper.realIndex]).addClass('active')
-                },
-            }
+            autoplay: {
+                delay: 1000,
+                disableOnInteraction: false
+            },
         });
         var mySwiperControl = document.querySelector('.top-slider__slider.swiper-container').swiper;
 
+        mySwiperControl.on('slideChange', function () {
+            var paginationBullet = sliderPagination.find('span').removeClass('active');
+            $(paginationBullet[mySwiper.realIndex]).addClass('active');
+            mySwiperControl.autoplay.stop();
+            mySwiperControl.autoplay.start();
+        });
         var i = 0;
 
         for (i; i < slidesCount; i++) {

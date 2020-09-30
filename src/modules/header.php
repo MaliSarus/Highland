@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <script defer src="./assets/js/jquery-3.4.1.min.js"></script>
     <script defer src="./assets/js/gsap.min.js"></script>
-    <script defer src="./assets/js/swiper.min.js"></script>
+<!--    <script defer src="./assets/js/swiper.min.js"></script>-->
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script defer src="./assets/js/script.js"></script>
 </head>
 <body>
